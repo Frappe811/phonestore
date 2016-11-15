@@ -1,0 +1,62 @@
+.sign-in-page {
+    h4 {
+     color: #730E15;
+    }
+    h5{
+      color: #6694ff;
+    }
+
+    .btn {
+      background-color: #6694ff;
+      color: white;
+    }
+
+    .forget-password-link {
+      color: #730E15;
+      line-height: 34px;
+      vertical-align: middle;
+    }
+
+    .sign-in-container {
+      border: 1px solid rgba(220, 212, 216, 0.58);
+       border-radius: 4px;
+
+        form {
+          padding: 13px;
+        }
+
+        .foot {
+          margin-top: 20px;
+          background-color: #eeeeee;
+          padding: 10px 20px 10px 20px;
+
+            .content {
+              text-align: justify;
+            }
+
+            .register-link {
+              color: #6694ff;
+              line-height: 30px;
+              vertical-align: middle;
+
+                &:hover {
+                  text-decoration: none;
+                }
+
+                &:after {
+                  vertical-align: middle;
+                  font-family: 'FontAwesome';
+                  content: '\f054';
+                  margin-left: 5px;
+                  font-size: 150%;
+                }
+            }
+        }
+    }
+
+    .separator {
+      border-top: 1px dashed gray;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+}
