@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-    resources :phones, only: [:index]
+  devise_for :users
+
+  root to: 'home#index'
+
+  resources :phones, only: [:index]
 end
