@@ -22,12 +22,11 @@
     .invisible {
       visibility: hidden;
     }
-    .searchh {
-
-    }
 
     .searchh input[type="text"] {
       margin-left: 25px;
+      vertical-align: top;
+      margin-top: 13.5px;
       height: 35px;
       background: url("search-dark.png") no-repeat white;
       background-size: 25px 25px;
@@ -35,7 +34,7 @@
       border: 0 none;
       font: bold 12px Arial,Helvetica,Sans-serif;
       color: #777;
-      width: 200px;
+      width: 250px;
       padding: 6px 15px 6px 35px;
       -webkit-border-radius: 20px;
       -moz-border-radius: 20px;
@@ -48,10 +47,26 @@
       -moz-transition: all 0.7s ease 0s;
       -o-transition: all 0.7s ease 0s;
       transition: all 0.7s ease 0s;
+
+      @media (min-width: 992px) {
+        width: 300px;
+      }
+      @media (min-width: 1200px) {
+        width: 500px;
+      }
     }
 
     .searchh input[type="text"]:focus {
-      width: 260px;
+      width: 300px;
+      outline:none;
+
+      @media (min-width: 992px) {
+        width: 400px;
+      }
+      @media (min-width: 1200px) {
+        width: 700px;
+      }
+
     }
 
   }
@@ -69,6 +84,9 @@
     }
     .sign-in-button {
       color: white;
+      font-size: 18px;
+    }
+    .brownse {
       font-size: 18px;
     }
   }
