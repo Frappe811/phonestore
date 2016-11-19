@@ -2,7 +2,7 @@
   background-color: #82B64A;
   color: white;
   .left {
-    >* {
+    > * {
       float: left;
       margin-left: 15px;
       line-height: 62px;
@@ -29,13 +29,13 @@
       margin-top: 13.5px;
       height: 35px;
       background: url("search-dark.png") no-repeat white;
-      background-size: 25px 25px;
+      background-size: 30px 30px;
       background-position: 5px 4px;
       border: 0 none;
-      font: bold 12px Arial,Helvetica,Sans-serif;
+      font: bold 12px Arial, Helvetica, Sans-serif;
       color: #777;
       width: 250px;
-      padding: 6px 15px 6px 35px;
+      padding: 6px 15px 6px 45px;
       -webkit-border-radius: 20px;
       -moz-border-radius: 20px;
       border-radius: 20px;
@@ -58,7 +58,7 @@
 
     .searchh input[type="text"]:focus {
       width: 300px;
-      outline:none;
+      outline: none;
 
       @media (min-width: 992px) {
         width: 400px;
@@ -71,16 +71,11 @@
 
   }
   .right {
-    >* {
+    > * {
       float: right;
       margin-right: 15px;
       line-height: 62px;
       font-size: 26px;
-    }
-
-    .fa-shopping-cart {
-    }
-    .fa-bars {
     }
     .sign-in-button {
       color: white;
