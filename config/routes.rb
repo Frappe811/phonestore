@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :phones, only: [:index]
+  resources :phones, only: [:show, :index]
 end
