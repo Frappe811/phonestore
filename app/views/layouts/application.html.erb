@@ -2,17 +2,46 @@
 <html>
 <head>
   <title>Phonestore</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= growlyflash_static_notices %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
+<div class="navigation">
+  <div class="left">
+    <i class="fa fa-mobile" aria-hidden="true"></i>
+    <span class="name">PhoneStore</span>
+
+    <div class="search hidden-xs">
+      <form method="get" action="/search" id="search">
+        <input name="q" type="text" size="40" placeholder="Search..."/>
+      </form>
+    </div>
+
+  </div>
+  <div class="right">
+    <span class="sign-in-button hidden-xs">
+      <a href="/users/sign_in" style="color:white;">SIGN IN</a>
+    </span>
+
+    <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
+    <i class="fa fa-bars visible-sm" aria-hidden="true"></i>
+
+    <i class="fa fa-bars visible-xs" aria-hidden="true"></i>
+    <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true"></i>
+
+    <span class="brownse hidden-xs hidden-sm">BROWSE</span>
+  </div>
+  <div class="clearfix"></div>
+</div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-  <div class="container">
-    <%= yield %>
-  </div>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
