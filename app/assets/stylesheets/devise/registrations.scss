@@ -1,0 +1,41 @@
+.signup-page {
+
+  h2{
+    color: #730E15;
+  }
+
+  .signup-container {
+    border: 1px solid rgba(220, 212, 216, 0.58);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    form {
+      padding: 5px;
+    }
+
+    .btn {
+      background-color: #82B64A;
+      color: white;
+
+    }
+
+    .backlogin-link {
+      color: #337ab7;
+      vertical-align: middle;
+      margin-left: 5px;
+
+      &:before {
+        vertical-align: middle;
+        font-family: 'FontAwesome';
+        content: '\f177';
+        margin-right: 4px;
+      }
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+  }
+}
