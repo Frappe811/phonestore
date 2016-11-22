@@ -1,3 +1,3 @@
 class Phone < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, :photo_url, :price, presence: true
 end

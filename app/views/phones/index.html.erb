@@ -1,6 +1,3 @@
-<% @phones.each do |phone| %>
-    <%= phone.name %><br/>
-<% end %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +5,13 @@
 <body>
 <div class="phones-index">
   <div class="row">
-    <% 10.times do %>
+    <% @phones.each do |phone| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="col-xs-10 col-xs-offset-1">
             <img class="phone-img"
-                 src="https://vinhphatmobile.com/images/thumbnails/212/212/detailed/9/1_fkor-bv.png">
-            <div class="phone-name">Apple iPhone 6s 32GB</div>
-            <div class="phone-price">12.000.000 d</div>
+                 src="<%= phone.photo_url %>">
+            <div class="phone-name"><%= phone.name %></div>
+            <div class="phone-price"><%= phone.price %> d</div>
             <div class="phone-cart">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <span class="buy">MUA NGAY</span>
@@ -25,5 +22,11 @@
   </div>
   <div class="clearfix"></div>
 </div>
+<div class="line"></div>
+<nav class="pagination">
+  <%= paginate @phones %>
+</nav>
+
+
 </body>
 </html>
