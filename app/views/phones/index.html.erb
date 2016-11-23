@@ -6,7 +6,7 @@
             <img class="phone-img"
                  src="<%= phone.photo_url %>">
             <div class="phone-name"><%= phone.name %></div>
-            <div class="phone-price"><%= phone.price %> d</div>
+            <div class="phone-price"><%= number_to_currency phone.price, precision: 0 %></div>
             <div class="phone-cart">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <span class="buy">MUA NGAY</span>
@@ -17,7 +17,13 @@
   </div>
   <div class="clearfix"></div>
   <div class="line"></div>
-  <nav class="pagination">
-    <%= paginate @phones %>
-  </nav>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @phones, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @phones, :window => 2, theme: 'normal' %>
+  </div>
+
 </div>

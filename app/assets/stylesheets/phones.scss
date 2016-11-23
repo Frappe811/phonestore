@@ -22,8 +22,9 @@
 
     .phone-name {
       margin-left: 10px;
-      font-size: 13px;
+      font-size: 15px;
       padding-bottom: 5px;
+      font-weight: bold;
     }
 
     .phone-price {
@@ -64,12 +65,52 @@
     margin-right: -10000px;
   }
 
-  .pagination {
-    float: right;
+  .pagination-container {
+    margin-right: 10px;
     font-weight: bold;
+    .pagination-large {
+      line-height: 60px;
+      a {
+        color: #82B64A;
+        margin-right: 6px;
+      }
 
-    a {
-      color: #82B64A;
+      .page.current {
+        margin-right: 6px;
+      }
+
+    }
+
+    @media(max-width: 768px) {
+      .first, .prev, .next, .last {
+      }
+    }
+
+    .pagination-normal {
+      .page {
+        margin-right: 15px;
+
+        a {
+          color: #82B64A;
+        }
+      }
+
+
+      .buttons {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .first, .prev, .next, .last {
+          margin-right: 5px;
+          border: 1px solid darkgray;
+          padding: 5px;
+
+          a {
+            color: #82B64A;
+          }
+        }
+      }
+
+
     }
   }
 }
