@@ -1,16 +1,20 @@
 .phone-index {
   margin-bottom: 15px;
+
   .phone-name {
+
     .name {
       font-size: 24px;
       margin-left: 10px;
       font-weight: bold;
     }
   }
+
   .phone-image {
     margin-top: 15px;
     text-align: center;
   }
+
   .small-description {
     margin-top: 15px;
   }
@@ -18,29 +22,35 @@
 
 .phone-desciption {
   margin-bottom: 15px;
+
   .description {
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
   }
+
   #des{
     margin-top: 15px;
   }
 }
 .phone-specifiction {
   margin-bottom: 15px;
+
   .specification {
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
   }
+
   .collapsed {
+
     .parameters {
       th {
         width: 150px;
       }
     }
   }
+
   #param {
     margin-top: 15px;
   }
@@ -48,18 +58,21 @@
 
 .phone-review {
   margin-bottom: 15px;
+
   .review {
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
   }
+
   .summary {
     margin-top: 15px;
     text-align: left;
+
     .liststars {
       text-align: center;
-
     }
+
     .add-review-button {
       text-align: center;
     }
@@ -68,13 +81,16 @@
 
 .reviews {
   margin-bottom: 15px;
+
   .name{
     margin-top: 15px;
     font-weight: bold;
   }
+
   .rating{
     margin-top: 15px;
   }
+
   .comment{
     margin-top: 10px;
   }
