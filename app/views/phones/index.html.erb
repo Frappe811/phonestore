@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
 <div class="phones-index">
   <div class="row">
     <% @phones.each do |phone| %>
@@ -21,12 +16,8 @@
     <% end %>
   </div>
   <div class="clearfix"></div>
+  <div class="line"></div>
+  <nav class="pagination">
+    <%= paginate @phones %>
+  </nav>
 </div>
-<div class="line"></div>
-<nav class="pagination">
-  <%= paginate @phones %>
-</nav>
-
-
-</body>
-</html>

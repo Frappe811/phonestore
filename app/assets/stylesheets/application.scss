@@ -5,6 +5,8 @@
 @import "devise/*";
 @import "phones";
 @import "navigation";
- .container {
-   overflow-x: hidden;
- }
+@import "bottom";
+
+.container {
+ overflow-x: hidden;
+}
