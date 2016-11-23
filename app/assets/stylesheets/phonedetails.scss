@@ -1,21 +1,22 @@
-.phone-index{
+.phone-index {
   margin-bottom: 15px;
-  .phone-name{
-    .name{
+  .phone-name {
+    .name {
       font-size: 24px;
       margin-left: 10px;
       font-weight: bold;
     }
   }
-  .phone-image{
+  .phone-image {
     margin-top: 15px;
     text-align: center;
   }
-  .small-description{
+  .small-description {
     margin-top: 15px;
   }
 }
-.phone-desciption{
+
+.phone-desciption {
   margin-bottom: 15px;
   .description {
     margin-top: 15px;
@@ -26,44 +27,46 @@
     margin-top: 15px;
   }
 }
-.phone-specifiction{
+.phone-specifiction {
   margin-bottom: 15px;
-  .specification{
+  .specification {
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
   }
-  .collapsed{
-    .parameters{
-      th{
+  .collapsed {
+    .parameters {
+      th {
         width: 150px;
       }
     }
   }
-  #param{
+  #param {
     margin-top: 15px;
   }
 }
-.phone-review{
+
+.phone-review {
   margin-bottom: 15px;
-  .review{
+  .review {
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
   }
-  .summary{
+  .summary {
     margin-top: 15px;
     text-align: left;
-    .liststars{
+    .liststars {
       text-align: center;
 
     }
-    .add-review-button{
+    .add-review-button {
       text-align: center;
     }
   }
 }
-.reviews{
+
+.reviews {
   margin-bottom: 15px;
   .name{
     margin-top: 15px;
@@ -76,11 +79,11 @@
     margin-top: 10px;
   }
 }
-.row{
+
+.row {
   border-top: 1px solid darkgray;
 }
+
 .stars {
   color: orange;
 }
-
-
