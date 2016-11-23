@@ -21,9 +21,6 @@
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
-    .collapse-button{
-      float: right;
-    }
   }
   #des{
     margin-top: 15px;
@@ -35,9 +32,6 @@
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
-    .collapse-button{
-      float: right;
-    }
   }
   .collapsed{
     .parameters{
@@ -56,19 +50,17 @@
     margin-top: 15px;
     font-size: 17px;
     color: #6694ff;
-    .collapse-button{
-      float: right;
-    }
   }
   .summary{
     margin-top: 15px;
     text-align: left;
-    padding-left: 100px;
-  }
-  .add-review-button{
-    margin-top: 15px;
-    text-align: center;
+    .liststars{
+      text-align: center;
 
+    }
+    .add-review-button{
+      text-align: center;
+    }
   }
 }
 .reviews{
@@ -76,9 +68,6 @@
   .name{
     margin-top: 15px;
     font-weight: bold;
-    .collapse-button{
-      float: right;
-    }
   }
   .rating{
     margin-top: 15px;
