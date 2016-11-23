@@ -26,23 +26,25 @@
   .description {
     margin-top: 15px;
     font-size: 17px;
-    color: #6694ff;
+    color: #82b64a;
   }
 
-  #des{
+  #des {
     margin-top: 15px;
+    text-align: justify;
   }
 }
+
 .phone-specifiction {
   margin-bottom: 15px;
 
   .specification {
     margin-top: 15px;
     font-size: 17px;
-    color: #6694ff;
+    color: #82b64a;
   }
 
-  .collapsed {
+  .collapse {
 
     .parameters {
       th {
@@ -62,7 +64,7 @@
   .review {
     margin-top: 15px;
     font-size: 17px;
-    color: #6694ff;
+    color: #82b64a;
   }
 
   .summary {
@@ -93,6 +95,7 @@
 
   .comment{
     margin-top: 10px;
+    text-align: justify;
   }
 }
 
@@ -102,4 +105,23 @@
 
 .stars {
   color: orange;
+}
+
+.collapse-button{
+  color: #82b64a;
+
+}
+
+.rating-container{
+  padding-left: 0;
+  padding-right: 0;
+  border: 1px solid orange;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+.rating-progress{
+  border: 1px solid orange;
+  background-color: orange;
+  height: 19px;
 }
