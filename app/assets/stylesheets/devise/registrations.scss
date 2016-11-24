@@ -13,6 +13,22 @@
 
     form {
       padding: 5px;
+
+      #error_explanation {
+
+        h2 {
+          background-color: rgba(255, 173, 199, 0.36);
+          color: #a95436;
+          font-size: 120%;
+          border: 1px solid #ffdcdd;
+          border-radius: 4px;
+          padding: 15px;
+        }
+
+        li {
+          color: red;
+        }
+      }
     }
 
     .btn {
