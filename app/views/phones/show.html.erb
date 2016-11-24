@@ -9,7 +9,7 @@
       </div>
       <div class="small-description col-xs-12 col-sm-6 col-md-4">
         <div class="phone-option">
-          <button type="button" class="price-button btn btn-warning"><%= @phone.price %>
+          <button type="button" class="price-button btn btn-warning"><%= number_to_currency @phone.price, precision: 0 %>
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           </button>
         </div>
