@@ -1,6 +1,6 @@
 class PhonesController < ApplicationController
   def index
-    @phones = Phone.all
+    @phones = Phone.page(params[:page]).per(12)
   end
 
   def show

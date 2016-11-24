@@ -1,3 +1,29 @@
-<% @phones.each do |phone|%>
-<%= phone.name %><br/>
-<% end %>
+<div class="phones-index">
+  <div class="row">
+    <% @phones.each do |phone| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="col-xs-10 col-xs-offset-1">
+            <img class="phone-img"
+                 src="<%= phone.photo_url %>">
+            <div class="phone-name"><%= phone.name %></div>
+            <div class="phone-price"><%= number_to_currency phone.price, precision: 0 %></div>
+            <div class="phone-cart">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span class="buy">MUA NGAY</span>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
+  <div class="line"></div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @phones, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @phones, :window => 2, theme: 'normal' %>
+  </div>
+
+</div>
