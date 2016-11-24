@@ -1,0 +1,109 @@
+.phones-index {
+  box-sizing: border-box;
+
+  .col-xs-12 {
+    .col-xs-10 {
+      padding-bottom: 10px;
+      .phone-img {
+        text-align: center;
+        width: 100%;
+
+        @media (min-width: 768px) {
+          min-width: 212px;
+          min-height: 212px;
+        }
+
+        @media (min-width: 992px) {
+          min-width: 212px;
+          min-height: 212px;
+        }
+      }
+    }
+
+    .phone-name {
+      margin-left: 10px;
+      font-size: 15px;
+      padding-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .phone-price {
+      font-size: 17px;
+      font-weight: bold;
+      color: red;
+      margin-left: 10px;
+      padding-bottom: 10px;
+    }
+
+    .phone-cart {
+      border-top: 1px solid darkgrey;
+
+      .fa-shopping-cart {
+        color: #82B64A;
+        font-size: 25px;
+        margin-left: 10px;
+        padding: 5px 0px 5px 0px;
+      }
+
+      .buy {
+        margin-right: 10px;
+        margin-top: 3px;
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        background-color: #e70000;
+        padding: 2px 8px 2px 8px;
+        float: right;
+        font-size: 16px;
+        color: white;
+      }
+    }
+  }
+
+  .line {
+    border-top: 2px solid #82B64A;
+    margin-left: -10000px;
+    margin-right: -10000px;
+  }
+
+  .pagination-container {
+    margin-right: 10px;
+    font-weight: bold;
+    .pagination-large {
+      line-height: 60px;
+      a {
+        color: #82B64A;
+        margin-right: 6px;
+      }
+
+      .page.current {
+        margin-right: 6px;
+      }
+    }
+
+    .pagination-normal {
+      .page {
+        margin-right: 15px;
+
+        a {
+          color: #82B64A;
+        }
+      }
+
+      .buttons {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .first, .prev, .next, .last {
+          margin-right: 5px;
+          border: 1px solid darkgray;
+          padding: 5px;
+
+          a {
+            color: #82B64A;
+          }
+        }
+      }
+    }
+  }
+}
+
+
