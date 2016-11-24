@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20161124063709) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal  "price"
+    t.string   "photo_url"
   end
 
   create_table "users", force: :cascade do |t|

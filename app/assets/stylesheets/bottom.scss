@@ -35,8 +35,14 @@
         border: 1px solid #777777;
         color: #d2d2d2;
         line-height: 40px;
+
+        i {
+          &:before {
+            line-height: 40px;
+          }
+        }
       }
-      }
+    }
   }
 
 
