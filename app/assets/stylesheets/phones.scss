@@ -78,12 +78,6 @@
       .page.current {
         margin-right: 6px;
       }
-
-    }
-
-    @media(max-width: 768px) {
-      .first, .prev, .next, .last {
-      }
     }
 
     .pagination-normal {
@@ -108,7 +102,6 @@
           }
         }
       }
-
     }
   }
 }
