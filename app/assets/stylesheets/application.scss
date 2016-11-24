@@ -3,5 +3,10 @@
 @import "font-awesome";
 @import "growlyflash";
 @import "devise/*";
+@import "phones";
 @import "navigation";
 @import "bottom";
+
+.container {
+  overflow-x: hidden;
+}
