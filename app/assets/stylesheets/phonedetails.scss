@@ -1,127 +1,131 @@
-.phone-index {
-  margin-bottom: 15px;
+.phone-show{
 
-  .phone-name {
+  .phone-index {
+    margin-bottom: 15px;
 
-    .name {
-      font-size: 24px;
-      margin-left: 10px;
-      font-weight: bold;
+    .phone-name {
+
+      .name {
+        font-size: 24px;
+        margin-left: 10px;
+        font-weight: bold;
+      }
+    }
+
+    .phone-option{
+      .price-button{
+        width: 110px;
+      }
+    }
+
+    .phone-image {
+      margin-top: 15px;
+      text-align: center;
+      min-width: 212px;
+      min-height: 212px;
+      display: inline;
+    }
+
+    .small-description {
+      margin-top: 15px;
     }
   }
 
-  .phone-image {
-    margin-top: 15px;
-    text-align: center;
+  .phone-desciption {
+    margin-bottom: 15px;
+
+    .description {
+      margin-top: 15px;
+      font-size: 17px;
+      color: #82b64a;
+    }
+
+    #des {
+      margin-top: 15px;
+      text-align: justify;
+    }
   }
 
-  .small-description {
-    margin-top: 15px;
-  }
-}
+  .phone-specifiction {
+    margin-bottom: 15px;
 
-.phone-desciption {
-  margin-bottom: 15px;
+    .specification {
+      margin-top: 15px;
+      font-size: 17px;
+      color: #82b64a;
+    }
 
-  .description {
-    margin-top: 15px;
-    font-size: 17px;
-    color: #82b64a;
-  }
-
-  #des {
-    margin-top: 15px;
-    text-align: justify;
-  }
-}
-
-.phone-specifiction {
-  margin-bottom: 15px;
-
-  .specification {
-    margin-top: 15px;
-    font-size: 17px;
-    color: #82b64a;
+    #param {
+      margin-top: 15px;
+    }
   }
 
-  .collapse {
+  .phone-review {
+    margin-bottom: 15px;
 
-    .parameters {
-      th {
-        width: 150px;
+    .review {
+      margin-top: 15px;
+      font-size: 17px;
+      color: #82b64a;
+    }
+
+    .summary {
+      margin-top: 15px;
+      text-align: left;
+
+      .liststars {
+        text-align: center;
+      }
+
+      .add-review-button {
+        text-align: center;
       }
     }
   }
 
-  #param {
-    margin-top: 15px;
+  .reviews {
+    margin-bottom: 15px;
+
+    .name{
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .rating{
+      margin-top: 15px;
+    }
+
+    .comment{
+      margin-top: 10px;
+      text-align: justify;
+    }
   }
-}
 
-.phone-review {
-  margin-bottom: 15px;
+  .row {
+    border-top: 1px solid darkgray;
+  }
 
-  .review {
-    margin-top: 15px;
-    font-size: 17px;
+  .stars {
+    color: orange;
+  }
+
+  .collapse-button{
     color: #82b64a;
+
   }
 
-  .summary {
-    margin-top: 15px;
-    text-align: left;
-
-    .liststars {
-      text-align: center;
-    }
-
-    .add-review-button {
-      text-align: center;
-    }
-  }
-}
-
-.reviews {
-  margin-bottom: 15px;
-
-  .name{
-    margin-top: 15px;
-    font-weight: bold;
+  .rating-container{
+    padding-left: 0;
+    padding-right: 0;
+    border: 1px solid orange;
+    height: 20px;
+    margin-bottom: 2px;
   }
 
-  .rating{
-    margin-top: 15px;
+  .rating-progress{
+    border: 1px solid orange;
+    background-color: orange;
+    height: 19px;
   }
 
-  .comment{
-    margin-top: 10px;
-    text-align: justify;
-  }
-}
-
-.row {
-  border-top: 1px solid darkgray;
-}
-
-.stars {
-  color: orange;
-}
-
-.collapse-button{
-  color: #82b64a;
-
-}
-
-.rating-container{
-  padding-left: 0;
-  padding-right: 0;
-  border: 1px solid orange;
-  height: 20px;
-  margin-bottom: 2px;
-}
-
-.rating-progress{
-  border: 1px solid orange;
-  background-color: orange;
-  height: 19px;
 }

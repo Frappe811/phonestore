@@ -1,19 +1,19 @@
-<div class="phone-index">
-  <div type class="phone-name">
-    <span class="name"><%= @phone.name %></span>
-  </div>
+<div class="phone-show">
+  <div class="phone-index">
+    <div type class="phone-name">
+      <span class="name"><%= @phone.name %></span>
+    </div>
     <div class="row">
       <div class="phone-image col-xs-12 col-sm-6 col-md-4">
-        <img class="image" style="min-width: 212px;min-height: 212px;display: inline;"
-             src="http://lorempixel.com/212/212">
+        <img class="image" src="<%= @phone.photo_url %>">
       </div>
-    <div class="small-description col-xs-12 col-sm-6 col-md-4">
-      <div class="phone-option">
-        <button type="button" class="btn btn-warning">16.000.000 d
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div >
+      <div class="small-description col-xs-12 col-sm-6 col-md-4">
+        <div class="phone-option">
+          <button type="button" class="price-button btn btn-warning"><%= @phone.price %>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div >
         <span class="stars">
           <i class="fa fa-star" aria-hidden="true"></i>
           <i class="fa fa-star" aria-hidden="true"></i>
@@ -21,20 +21,20 @@
           <i class="fa fa-star-half-o" aria-hidden="true"></i>
           <i class="fa fa-star-o" aria-hidden="true"></i>
         </span>
-        (79)
+          (79)
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="phone-desciption">
-  <div class="row">
-    <div class="description col-xs-10 col-sm-2 col-md-2 ">
-      <span>Description </span>
-    </div>
-    <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
-      <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#des" aria-hidden="true"></span>
-    </div>
-    <div id ="des" class=" collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
+  <div class="phone-desciption">
+    <div class="row">
+      <div class="description col-xs-10 col-sm-2 col-md-2 ">
+        <span>Description </span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#des" aria-hidden="true"></span>
+      </div>
+      <div id ="des" class=" collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales eget arcu sit amet convallis.
         Vivamus tellus dolor, egestas sit amet nulla tempus, molestie ultrices lorem. Phasellus accumsan dui
         ac neque tincidunt dignissim. Duis tincidunt elit ante, quis hendrerit libero iaculis eu. Morbi
@@ -44,18 +44,18 @@
         bibendum ornare porttitor ac, porttitor id mi. Morbi nec nisi lectus. Quisque vestibulum rutrum leo et
         mattis. Cras venenatis volutpat efficitur..
       </span>
+      </div>
     </div>
   </div>
-</div>
-<div class="phone-specifiction">
-  <div class="row">
-    <div class="specification col-xs-10 col-sm-2 col-md-2">
-      <span>Specification</span>
-    </div>
-    <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
-      <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#param" aria-hidden="true"></span>
-    </div>
-    <div id="param"class="collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
+  <div class="phone-specifiction">
+    <div class="row">
+      <div class="specification col-xs-10 col-sm-2 col-md-2">
+        <span>Specification</span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#param" aria-hidden="true"></span>
+      </div>
+      <div id="param"class="collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
         <table style="width: 100%" class="parameters">
           <tr>
             <th>Display</th>
@@ -74,13 +74,89 @@
             <td>5 MP</td>
           </tr>
         </table>
+      </div>
     </div>
   </div>
-</div>
-<div class="phone-review">
-  <div class="row">
-    <div class="review col-xs-10 col-sm-4 col-md-3 ">
-      <span>78 Reviews</span>
+  <div class="phone-review">
+    <div class="row">
+      <div class="review col-xs-10 col-sm-4 col-md-3 ">
+        <span>78 Reviews</span>
+        <span class="stars">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-7 col-md-1 col-md-push-8" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#reviews" aria-hidden="true"></span>
+      </div>
+      <div class="summary col-xs-12 col-sm-4 col-sm-pull-1 col-md-5 col-md-pull-1 ">
+        <div class="liststars">
+          <div>
+            <div class="col-xs-4 col-sm-5 col-md-3">
+              <span>5 Stars</span>
+            </div>
+            <div class="rating-container col-xs-6 col-sm-5 col-md-8">
+              <div class="rating-progress" style="margin-right: 10%"></div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">(100)</div>
+          </div>
+          <div>
+            <div class="col-xs-4 col-sm-5 col-md-3">
+              <span>4 Stars</span>
+            </div>
+            <div class="rating-container col-xs-6 col-sm-5 col-md-8">
+              <div class="rating-progress" style="margin-right: 20%"></div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
+          </div>
+          <div>
+            <div class="col-xs-4 col-sm-5 col-md-3">
+              <span>3 Stars</span>
+            </div>
+            <div class="rating-container col-xs-6 col-sm-5 col-md-8">
+              <div class="rating-progress" style="margin-right: 30%"></div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
+          </div>
+          <div>
+            <div class="col-xs-4 col-sm-5 col-md-3">
+              <span>2 Stars</span>
+            </div>
+            <div class="rating-container col-xs-6 col-sm-5 col-md-8">
+              <div class="rating-progress" style="margin-right: 40%"></div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
+          </div>
+          <div>
+            <div class="col-xs-4 col-sm-5 col-md-3">
+              <span>1 Star</span>
+            </div>
+            <div class="rating-container col-xs-6 col-sm-5 col-md-8">
+              <div class="rating-progress" style="margin-right: 50%"></div>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
+          </div>
+        </div>
+      </div>
+      <div class="summary col-xs-12 col-sm-3 col-sm-pull-1 col-md-3 col-md-pull-1 ">
+        <div class="add-review-button">
+          <button type="button" class="btn btn-success">ADD A REVIEW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="reviews"  class="collapse in reviews">
+    <div  class="row">
+      <div class="name col-xs-10 col-sm-3 col-md-3 ">
+        <span>Reviewer #1</span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-8 col-md-1 col-md-push-8" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#comment1" aria-hidden="true"></span>
+      </div>
+      <div class="rating col-xs-12 col-sm-8 col-sm-pull-1 col-md-8 col-md-pull-1">
       <span class="stars">
         <i class="fa fa-star" aria-hidden="true"></i>
         <i class="fa fa-star" aria-hidden="true"></i>
@@ -88,85 +164,9 @@
         <i class="fa fa-star" aria-hidden="true"></i>
         <i class="fa fa-star" aria-hidden="true"></i>
       </span>
-    </div>
-    <div class="col-xs-2 col-sm-1 col-sm-push-7 col-md-1 col-md-push-8" style="margin-top: 15px">
-      <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#reviews" aria-hidden="true"></span>
-    </div>
-    <div class="summary col-xs-12 col-sm-4 col-sm-pull-1 col-md-5 col-md-pull-1 ">
-      <div class="liststars">
-        <div>
-          <div class="col-xs-4 col-sm-5 col-md-3">
-            <span>5 Stars</span>
-          </div>
-          <div class="rating-container col-xs-6 col-sm-5 col-md-8">
-            <div class="rating-progress" style="margin-right: 10%"></div>
-          </div>
-          <div class="col-xs-1 col-sm-1 col-md-1">(100)</div>
-        </div>
-        <div>
-          <div class="col-xs-4 col-sm-5 col-md-3">
-            <span>4 Stars</span>
-          </div>
-          <div class="rating-container col-xs-6 col-sm-5 col-md-8">
-            <div class="rating-progress" style="margin-right: 20%"></div>
-          </div>
-          <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
-        </div>
-        <div>
-          <div class="col-xs-4 col-sm-5 col-md-3">
-            <span>3 Stars</span>
-          </div>
-          <div class="rating-container col-xs-6 col-sm-5 col-md-8">
-            <div class="rating-progress" style="margin-right: 30%"></div>
-          </div>
-          <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
-        </div>
-        <div>
-          <div class="col-xs-4 col-sm-5 col-md-3">
-            <span>2 Stars</span>
-          </div>
-          <div class="rating-container col-xs-6 col-sm-5 col-md-8">
-            <div class="rating-progress" style="margin-right: 40%"></div>
-          </div>
-          <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
-        </div>
-        <div>
-          <div class="col-xs-4 col-sm-5 col-md-3">
-            <span>1 Star</span>
-          </div>
-          <div class="rating-container col-xs-6 col-sm-5 col-md-8">
-            <div class="rating-progress" style="margin-right: 50%"></div>
-          </div>
-          <div class="col-xs-1 col-sm-1 col-md-1">(76)</div>
-        </div>
+        12/12/2016
       </div>
-    </div>
-    <div class="summary col-xs-12 col-sm-3 col-sm-pull-1 col-md-3 col-md-pull-1 ">
-      <div class="add-review-button">
-        <button type="button" class="btn btn-success">ADD A REVIEW</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="reviews"  class=" collapse in reviews">
-  <div  class="row">
-    <div class="name col-xs-10 col-sm-3 col-md-3 ">
-      <span>Reviewer #1</span>
-    </div>
-    <div class="col-xs-2 col-sm-1 col-sm-push-8 col-md-1 col-md-push-8" style="margin-top: 15px">
-      <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#comment1" aria-hidden="true"></span>
-    </div>
-    <div class="rating col-xs-12 col-sm-8 col-sm-pull-1 col-md-8 col-md-pull-1">
-      <span class="stars">
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-      </span>
-      12/12/2016
-    </div>
-    <div id="comment1" class="comment collapse in col-xs-12 col-sm-11 col-md-11">
+      <div id="comment1" class="comment collapse in col-xs-12 col-sm-11 col-md-11">
          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales eget arcu sit amet convallis.
         Vivamus tellus dolor, egestas sit amet nulla tempus, molestie ultrices lorem. Phasellus accumsan dui
         ac neque tincidunt dignissim. Duis tincidunt elit ante, quis hendrerit libero iaculis eu. Morbi
@@ -176,16 +176,16 @@
         bibendum ornare porttitor ac, porttitor id mi. Morbi nec nisi lectus. Quisque vestibulum rutrum leo et
         mattis. Cras venenatis volutpat efficitur..
       </span>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="name col-xs-10 col-sm-3 col-md-3">
-      <span>Reviewer #2</span>
-    </div>
-    <div class="col-xs-2 col-sm-1 col-sm-push-8 col-md-1 col-md-push-8" style="margin-top: 15px">
-      <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#comment" aria-hidden="true"></span>
-    </div>
-    <div class="rating col-xs-12 col-sm-8 col-sm-pull-1 col-md-8 col-md-pull-1">
+    <div class="row">
+      <div class="name col-xs-10 col-sm-3 col-md-3">
+        <span>Reviewer #2</span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-8 col-md-1 col-md-push-8" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#comment" aria-hidden="true"></span>
+      </div>
+      <div class="rating col-xs-12 col-sm-8 col-sm-pull-1 col-md-8 col-md-pull-1">
       <span class="stars">
         <i class="fa fa-star" aria-hidden="true"></i>
         <i class="fa fa-star" aria-hidden="true"></i>
@@ -193,9 +193,9 @@
         <i class="fa fa-star" aria-hidden="true"></i>
         <i class="fa fa-star" aria-hidden="true"></i>
       </span>
-      10/12/2016
-    </div>
-    <div id="comment" class="comment collapse in col-xs-12 col-sm-11 col-md-11">
+        10/12/2016
+      </div>
+      <div id="comment" class="comment collapse in col-xs-12 col-sm-11 col-md-11">
          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales eget arcu sit amet convallis.
         Vivamus tellus dolor, egestas sit amet nulla tempus, molestie ultrices lorem. Phasellus accumsan dui
         ac neque tincidunt dignissim. Duis tincidunt elit ante, quis hendrerit libero iaculis eu. Morbi
@@ -205,6 +205,7 @@
         bibendum ornare porttitor ac, porttitor id mi. Morbi nec nisi lectus. Quisque vestibulum rutrum leo et
         mattis. Cras venenatis volutpat efficitur..
       </span>
+      </div>
     </div>
   </div>
 </div>
