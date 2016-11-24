@@ -2,6 +2,7 @@
   h4 {
     color: #730E15;
   }
+
   h5 {
     color: #6694ff;
   }
@@ -20,6 +21,7 @@
   .login-container {
     border: 1px solid rgba(220, 212, 216, 0.58);
     border-radius: 4px;
+    margin-bottom: 15px;
 
     form {
       padding: 13px;
@@ -52,6 +54,35 @@
         }
       }
     }
+  }
+
+  .signin-facebook {
+    border: 1px solid rgba(0, 0, 141, 0.68);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 104, 0.82);
+    color: #f0f0f0;
+    padding: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 95%;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      vertical-align: middle;
+      font-family: 'FontAwesome';
+      content: '\f230';
+      padding-right: 5px;
+
+      font-size: 160%;
+
+
+    }
+
+
+
   }
 
   .separator {
