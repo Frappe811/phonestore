@@ -17,7 +17,7 @@
   <div class="left">
     <i class="fa fa-mobile" aria-hidden="true"></i>
     <span class="name">PhoneStore</span>
-
+    <!--Thanh Search khong hien thi tren Mobile-->
     <div class="search hidden-xs">
       <form method="get" action="/search" id="search">
         <input name="q" type="text" size="40" placeholder="Search..."/>
@@ -29,14 +29,56 @@
     <span class="sign-in-button hidden-xs">
       <a href="/users/sign_in" style="color:white;">SIGN IN</a>
     </span>
-
+    <!--Chi danh cho giao dien Ipad-->
     <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
-    <i class="fa fa-bars visible-sm" aria-hidden="true"></i>
-
-    <i class="fa fa-bars visible-xs" aria-hidden="true"></i>
+    <div class="dropdown">
+      <button class="fa fa-bars visible-sm dropdown-toggle" type="button"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      </button>
+      <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
+        <div><a href="#">All categories</a></div>
+        <div><a href="#">iPhone</a></div>
+        <div><a href="#">SamSung</a></div>
+        <div><a href="#">Sony</a></div>
+        <div><a href="#">Xiaomi</a></div>
+      </div>
+    </div>
+    <!--Chi danh cho giao dien Mobile-->
+    <div class="dropdown">
+      <button class="fa fa-bars visible-xs dropdown-toggle" type="button"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      </button>
+      <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
+        <div class="search_for_mobile visible-xs">
+          <form class="form" method="get" action="/search" id="search">
+            <input class="ss" name="q" type="text" size="40"/>
+          </form>
+        </div>
+        <div role="separator" class="divider">BROWSE</div>
+        <div><a href="#">All categories</a></div>
+        <div><a href="#">iPhone</a></div>
+        <div><a href="#">SamSung</a></div>
+        <div><a href="#">Sony</a></div>
+        <div><a href="#">Xiaomi</a></div>
+        <div role="separator" class="divider">GUEST</div>
+        <div><a href="#">Sign in</a></div>
+        <div><a href="#">Sign up</a></div>
+      </div>
+    </div>
     <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true"></i>
-
-    <span class="brownse hidden-xs hidden-sm">BROWSE</span>
+    <!--Chi danh cho giao dien Destop(Large)-->
+    <span class="dropdown">
+      <button class="browse hidden-xs hidden-sm" type="button"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">BROWSE
+      </button>
+      <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
+        <div><a href="#">All categories</a></div>
+        <div><a href="#">iPhone</a></div>
+        <div><a href="#">SamSung</a></div>
+        <div><a href="#">Sony</a></div>
+        <div><a href="#">Xiaomi</a></div>
+      </div>
+    </span>
   </div>
   <div class="clearfix"></div>
 </div>

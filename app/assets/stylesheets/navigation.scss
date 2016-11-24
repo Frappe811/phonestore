@@ -77,13 +77,69 @@
       line-height: 62px;
       font-size: 26px;
     }
+
     .sign-in-button {
       color: white;
       font-size: 18px;
     }
-    .brownse {
-      font-size: 18px;
+
+    .dropdown {
+      .fa-bars {
+        background-color: #82B64A;
+        height: 62px;
+        border: 0px solid #82B64A;
+      }
+
+      .dropdown-menu {
+        left: -100px;
+        text-align: left;
+        min-width: 150px;
+        color: white;
+        background-color: #82B64A;
+
+        * {
+          line-height: 35px;
+        }
+
+        a {
+          margin-left: 30px;
+          color: white;
+        }
+
+        .search_for_mobile {
+          input[type="text"] {
+            background: url("search-dark.png") no-repeat white;
+            background-size: 30px 30px;
+            background-position: 100px 4px;
+          }
+          .form {
+            margin-bottom: 5px;
+            .ss {
+              width: 138px;
+              margin-right: 5px;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .divider {
+          height: 27px;
+          margin-top: 0px;
+          margin-left: 10px;
+          margin-right: 10px;
+          background-color: #82B64A;
+          border-bottom: 1px solid white;
+        }
+      }
+      .browse {
+        height: 62px;
+        font-size: 18px;
+        background-color: #82B64A;
+        border: 0px solid #82B64A;
+        outline: none;
+      }
     }
+
   }
 
 }
