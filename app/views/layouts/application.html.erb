@@ -1,6 +1,3 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +7,8 @@
   <%= csrf_meta_tags %>
   <%= growlyflash_static_notices %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 </head>
 <body>
@@ -19,20 +18,26 @@
         <i class="fa fa-mobile" aria-hidden="true"></i>
         <span class="name">PhoneStore</span>
     <% end %>
-
     <!--Thanh Search khong hien thi tren Mobile-->
     <div class="search hidden-xs">
       <form method="get" action="/search" id="search">
         <input name="q" type="text" size="40" placeholder="Search..."/>
       </form>
     </div>
-
   </div>
   <div class="right">
-    <span class="sign-in-button hidden-xs">
-      <a href="/users/sign_in" style="color:white;">SIGN IN</a>
-    </span>
     <!--Chi danh cho giao dien Ipad-->
+    <div class="signin-signout hidden-xs">
+      <% if user_signed_in? %>
+          <li>
+            <%= link_to('SIGN OUT', destroy_user_session_path, :method => :delete) %>
+          </li>
+      <% else %>
+          <li>
+            <%= link_to('SIGN IN', new_user_session_path)  %>
+          </li>
+      <% end %>
+    </div>
     <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
     <div class="dropdown">
       <button class="fa fa-bars visible-sm dropdown-toggle" type="button"

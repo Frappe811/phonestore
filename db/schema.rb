@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 20161126101641) do
 
   create_table "phones", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.decimal  "price"
     t.string   "photo_url"
+    t.text     "description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 20161126101641) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

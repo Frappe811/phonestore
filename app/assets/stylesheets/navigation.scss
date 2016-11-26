@@ -91,9 +91,20 @@
       font-size: 26px;
     }
 
-    .sign-in-button {
+    .signin-signout {
       color: white;
+
       font-size: 18px;
+      text-align: center;
+
+      li {
+        display: block;
+      }
+
+      a {
+        color: white;
+        margin-right: 8px;
+      }
     }
 
     .dropdown {
