@@ -21,9 +21,13 @@
     .phone-image {
       margin-top: 15px;
       text-align: center;
-      min-width: 212px;
-      min-height: 212px;
       display: inline;
+
+      .image{
+        width: 221px;
+        height: 221px;
+        object-fit: cover;
+      }
     }
 
     .small-description {
