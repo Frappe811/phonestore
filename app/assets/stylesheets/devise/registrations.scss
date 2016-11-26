@@ -1,0 +1,58 @@
+.signup-page {
+
+  h2{
+    color: #730E15;
+    font-size:150%;
+  }
+
+  .signup-container {
+    border: 1px solid rgba(220, 212, 216, 0.58);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    form {
+      padding: 5px;
+
+      #error_explanation {
+
+        h2 {
+          background-color: rgba(255, 173, 199, 0.36);
+          color: #a95436;
+          font-size: 120%;
+          border: 1px solid #ffdcdd;
+          border-radius: 4px;
+          padding: 15px;
+        }
+
+        li {
+          color: red;
+        }
+      }
+    }
+
+    .btn {
+      background-color: #82B64A;
+      color: white;
+
+    }
+
+    .backlogin-link {
+      color: #337ab7;
+      vertical-align: middle;
+      margin-left: 5px;
+
+      &:before {
+        vertical-align: middle;
+        font-family: 'FontAwesome';
+        content: '\f177';
+        margin-right: 4px;
+      }
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+  }
+}
