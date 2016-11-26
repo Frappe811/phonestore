@@ -17,6 +17,10 @@
           min-width: 212px;
           min-height: 212px;
         }
+
+        height: 212px;
+        width: 212px;
+        object-fit: cover;
       }
     }
 
@@ -25,6 +29,11 @@
       font-size: 15px;
       padding-bottom: 5px;
       font-weight: bold;
+
+      a{
+        color: black;
+        text-decoration:none;
+      }
     }
 
     .phone-price {

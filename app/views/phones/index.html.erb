@@ -3,9 +3,10 @@
     <% @phones.each do |phone| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="col-xs-10 col-xs-offset-1">
-            <img class="phone-img"
-                 src="<%= phone.photo_url %>">
-            <div class="phone-name"><%= phone.name %></div>
+            <%= link_to phone_path(phone) do %>
+                <img class="phone-img" src="<%= phone.photo_url %>">
+            <% end %>
+            <div class="phone-name"><%= link_to phone.name, phone_path(phone) %></div>
             <div class="phone-price"><%= number_to_currency phone.price, precision: 0 %></div>
             <div class="phone-cart">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
