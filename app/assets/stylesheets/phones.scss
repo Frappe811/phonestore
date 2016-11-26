@@ -4,13 +4,11 @@
   .col-xs-12 {
     .col-xs-10 {
       padding-bottom: 10px;
+
       .phone-img {
         text-align: center;
         width: 100%;
-        height: 212px;
-        width: 212px;
-        object-fit: cover;
-        
+
         @media (min-width: 768px) {
           min-width: 212px;
           min-height: 212px;
@@ -19,6 +17,7 @@
         @media (min-width: 992px) {
           min-width: 212px;
           min-height: 212px;
+
         }
       }
     }
