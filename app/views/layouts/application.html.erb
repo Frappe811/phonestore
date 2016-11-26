@@ -72,13 +72,14 @@
         <div><a href="#">Xiaomi</a></div>
         <div><a href="#">BlackBerry</a></div>
         <div><a href="#">LG</a></div>
-        <div role="separator" class="divider">GUEST</div>
         <div class="sign-in-sign-out">
           <% if user_signed_in? %>
+              <div role="separator" class="divider">Hi <%= current_user.name %></div>
               <div><%= link_to('Profile', new_user_session_path)  %></div>
               <div><%= link_to('Past Order', new_user_session_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
           <% else %>
+              <div role="separator" class="divider">GUEST</div>
               <div><%= link_to('Sign in', new_user_session_path)  %></div>
               <div><%= link_to "Sign up",new_user_registration_path %></div>
           <% end %>
