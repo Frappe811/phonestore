@@ -8,5 +8,5 @@
 
   root to: 'phones#index'
 
-  resources :phones, only: [:index]
+  resources :phones, only: [:show, :index]
 end
