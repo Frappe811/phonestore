@@ -15,8 +15,11 @@
 <body>
 <div class="navigation">
   <div class="left">
-    <i class="fa fa-mobile" aria-hidden="true"></i>
-    <span class="name">PhoneStore</span>
+    <%= link_to root_path, class:"homeclick" do %>
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        <span class="name">PhoneStore</span>
+    <% end %>
+
     <!--Thanh Search khong hien thi tren Mobile-->
     <div class="search hidden-xs">
       <form method="get" action="/search" id="search">
@@ -65,8 +68,16 @@
         <div><a href="#">BlackBerry</a></div>
         <div><a href="#">LG</a></div>
         <div role="separator" class="divider">GUEST</div>
-        <div><a href="#">Sign in</a></div>
-        <div><a href="#">Sign up</a></div>
+        <div class="sign-in-sign-out">
+          <% if user_signed_in? %>
+              <div><%= link_to('Profile', new_user_session_path)  %></div>
+              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
+          <% else %>
+              <div><%= link_to('Sign in', new_user_session_path)  %></div>
+              <div><%= link_to "Sign up",new_user_registration_path %></div>
+          <% end %>
+        </div>
       </div>
     </div>
     <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true"></i>

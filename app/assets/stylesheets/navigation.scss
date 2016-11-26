@@ -7,14 +7,27 @@
       margin-left: 15px;
       line-height: 62px;
     }
+    .homeclick {
+      height: 62px;
+      color: white;
+      text-decoration: none;
 
-    .fa-mobile {
-      font-size: 48px;
+      .fa-mobile {
+        font-size: 48px;
+        line-height: 62px;
+
+      }
+
+      .name {
+        font-size: 26px;
+        margin-left: 10px;
+        vertical-align: top;
+
+      }
+
     }
 
-    .name {
-      font-size: 26px;
-    }
+
 
     .hidden {
       display: none !important;
@@ -105,13 +118,14 @@
         a {
           margin-left: 30px;
           color: white;
+          text-decoration: none;
         }
 
         .search_for_mobile {
           input[type="text"] {
             background: url("search-dark.png") no-repeat white;
             background-size: 30px 30px;
-            background-position: 100px 4px;
+            background-position: 120px 4px;
           }
           .form {
             margin-bottom: 5px;
