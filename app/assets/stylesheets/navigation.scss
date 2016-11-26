@@ -91,11 +91,12 @@
       }
 
       .dropdown-menu {
-        left: -100px;
+        left: -120px;
         text-align: left;
-        min-width: 150px;
+        min-width: 170px;
         color: white;
-        background-color: #82B64A;
+        background-color: #95d456;
+        font-size: 16px;
 
         * {
           line-height: 35px;
@@ -115,7 +116,7 @@
           .form {
             margin-bottom: 5px;
             .ss {
-              width: 138px;
+              width: 158px;
               margin-right: 5px;
               margin-left: 5px;
             }
@@ -123,11 +124,12 @@
         }
 
         .divider {
+          font-size: 17.5px;
           height: 27px;
           margin-top: 0px;
           margin-left: 10px;
           margin-right: 10px;
-          background-color: #82B64A;
+          background-color: #95d456;
           border-bottom: 1px solid white;
         }
       }
