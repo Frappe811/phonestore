@@ -13,8 +13,10 @@
 <body>
 <div class="navigation">
   <div class="left">
-    <i class="fa fa-mobile" aria-hidden="true"></i>
-    <span class="name">PhoneStore</span>
+    <%= link_to root_path, class:"homeclick" do %>
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        <span class="name">PhoneStore</span>
+    <% end %>
   </div>
   <div class="right">
     <span class="signin-signout sign-in-button">
