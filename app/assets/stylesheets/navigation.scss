@@ -77,9 +77,18 @@
       line-height: 62px;
       font-size: 26px;
     }
-    .sign-in-button {
-      color: white;
+    .signin-signout {
       font-size: 18px;
+      text-align: center;
+
+      li {
+        display: block;
+      }
+
+      a {
+        color: white;
+        margin-right: 8px;
+      }
     }
     .brownse {
       font-size: 18px;

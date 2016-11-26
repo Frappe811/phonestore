@@ -26,10 +26,17 @@
 
   </div>
   <div class="right">
-    <span class="sign-in-button hidden-xs">
-      <a href="/users/sign_in" style="color:white;">SIGN IN</a>
-    </span>
-
+    <div class="signin-signout">
+      <% if user_signed_in? %>
+          <li>
+            <%= link_to('SIGN OUT', destroy_user_session_path, :method => :delete) %>
+          </li>
+      <% else %>
+          <li>
+            <%= link_to('SIGN IN', new_user_session_path)  %>
+          </li>
+      <% end %>
+    </div>
     <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
     <i class="fa fa-bars visible-sm" aria-hidden="true"></i>
 
