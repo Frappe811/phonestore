@@ -8,6 +8,7 @@
       .phone-img {
         text-align: center;
         width: 100%;
+        object-fit: cover;
 
         @media (min-width: 768px) {
           min-width: 257.5px;
