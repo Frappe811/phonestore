@@ -25,13 +25,29 @@
 
     .phone-name {
       margin-left: 10px;
+      margin-right: 10px;
       font-size: 15px;
       padding-bottom: 5px;
       font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       a{
         color: black;
         text-decoration:none;
+      }
+    }
+
+    .phone-name + .tooltip {
+      font-size: 14px;
+    }
+
+    .phone-name:hover{
+      width: auto;
+
+      a{
+        color: #82B64A;
       }
     }
 
@@ -79,7 +95,7 @@
 
     .pagination-large {
       line-height: 60px;
-      
+
       a {
         color: #82B64A;
         margin-right: 6px;
