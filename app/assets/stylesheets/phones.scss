@@ -123,10 +123,12 @@
         .first, .prev, .next, .last {
           margin-right: 5px;
           border: 1px solid darkgray;
+          border-radius: 5px;
+          background-color: #82B64A;
           padding: 5px;
 
           a {
-            color: #82B64A;
+            color: white;
           }
         }
       }
