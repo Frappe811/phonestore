@@ -28,6 +28,7 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'growlyflash'
 gem 'omniauth-facebook'
+gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,4 +53,4 @@ group :development do
   gem 'factory_girl_rails'
 end
 
-
+ruby "2.3.1"
