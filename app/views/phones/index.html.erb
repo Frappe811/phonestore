@@ -6,7 +6,9 @@
             <%= link_to phone_path(phone) do %>
                 <img class="phone-img" src="<%= phone.photo_url %>">
             <% end %>
-            <div class="phone-name"><%= link_to phone.name, phone_path(phone) %></div>
+            <div class="phone-name" data-toggle="tooltip" title="<%= phone.name %>">
+              <%= link_to phone.name, phone_path(phone) %>
+            </div>
             <div class="phone-price"><%= number_to_currency phone.price, precision: 0 %></div>
             <div class="phone-cart">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -26,5 +28,9 @@
   <div class="pagination-container visible-xs text-center">
     <%= paginate @phones, :window => 2, theme: 'normal' %>
   </div>
-
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 </div>

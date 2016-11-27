@@ -1,6 +1,7 @@
 .navigation {
   background-color: #82B64A;
   color: white;
+
   .left {
     > * {
       float: left;
@@ -93,7 +94,6 @@
 
     .signin-signout {
       color: white;
-
       font-size: 18px;
       text-align: center;
 
@@ -159,14 +159,14 @@
         }
       }
       .browse {
-        height: 62px;
+        padding: 0px;
+        vertical-align: top;
         font-size: 18px;
         background-color: #82B64A;
         border: 0px solid #82B64A;
         outline: none;
       }
     }
-
   }
-
 }
+
