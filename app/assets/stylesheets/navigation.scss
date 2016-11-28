@@ -28,8 +28,6 @@
 
     }
 
-
-
     .hidden {
       display: none !important;
     }
@@ -94,20 +92,21 @@
 
     .signin-signout {
       color: white;
-      font-size: 18px;
-      text-align: center;
 
       li {
         display: block;
       }
 
-      a {
+      .signin-btn {
+        font-size: 18px;
+        text-align: center;
         color: white;
         margin-right: 8px;
       }
     }
 
     .dropdown {
+
       .fa-bars {
         background-color: #82B64A;
         height: 62px;
@@ -140,6 +139,7 @@
           }
           .form {
             margin-bottom: 5px;
+
             .ss {
               width: 158px;
               margin-right: 5px;
@@ -158,6 +158,7 @@
           border-bottom: 1px solid white;
         }
       }
+
       .browse {
         padding: 0px;
         vertical-align: top;
