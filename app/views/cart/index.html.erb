@@ -1,0 +1,17 @@
+<h1>Your Cart</h1>
+<%= link_to 'Empty Your Cart', cart_clear_path %>
+<br>
+<% total = 0 %>
+<ul>
+  <% @cart.each do | id, quantity | %>
+  <% phone = Phone.find_by_id(id) %>
+      <li>
+        <%= link_to phone.name %>
+        <p><%= number_to_currency(phone.price, :unit => '$') %></p>
+        <p>Quantity: <%= quantity %></p>
+
+      </li>
+      <% total += quantity + phone.price  %>
+  <% end %>
+  <p><%= number_to_currency(total, :unit => '$') %></p>
+</ul>
