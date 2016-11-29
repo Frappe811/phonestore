@@ -9,7 +9,7 @@
       </div>
       <div class="small-description col-xs-12 col-sm-6 col-md-4">
         <div class="phone-option">
-          <button type="button" class="price-button btn btn-warning"><%= number_to_currency @phone.price, precision: 0 %>
+          <button type="button" class="price-button btn btn-default"><%= number_to_currency @phone.price, precision: 0 %>
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           </button>
         </div>
@@ -56,24 +56,48 @@
         <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#param" aria-hidden="true"></span>
       </div>
       <div id="param"class="collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
-        <table style="width: 100%" class="parameters">
-          <tr>
-            <th>Display</th>
-            <td>LED</td>
-          </tr>
-          <tr>
-            <th>Operating System</th>
-            <td>Android 5.0</td>
-          </tr>
-          <tr>
-            <th>Camera</th>
-            <td>15 MP</td>
-          </tr>
-          <tr>
-            <th>Font-Camera</th>
-            <td>5 MP</td>
-          </tr>
-        </table>
+        <div class="parameters">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Display</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.display %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Operating System</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.os %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Back Camera</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.back_camera %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Font-Camera</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.font_camera %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">CPU</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.cpu %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Ram</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.ram %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Storage</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.storage %></div>
+          </div >
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Support Memory Card</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.sp_storage %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Sim</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.sim %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Battery</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.battery %></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
