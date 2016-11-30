@@ -1,6 +1,7 @@
 class PhonesController < ApplicationController
   def index
     category = Category.find_by_id(params[:id])
+    @category = category
     if category == nil
       @phones = Phone.page(params[:page]).per(12)
     else

@@ -1,8 +1,24 @@
 .phones-index {
   box-sizing: border-box;
+  .category_bar {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    line-height: 47px;
+    background-color: #95d456;
+    width: 100%;
+    left: 0;
+    top: -62;
+    position: absolute;
+
+      .categories {
+        margin-left: 15px;
+      }
+  }
 
   .col-xs-12 {
     .col-xs-10 {
+      padding-top: 124px;
       padding-bottom: 10px;
 
       .phone-img {
