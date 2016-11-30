@@ -44,13 +44,10 @@
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       </button>
       <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
-        <div><a href="#">All categories</a></div>
-        <div><a href="#">iPhone</a></div>
-        <div><a href="#">SamSung</a></div>
-        <div><a href="#">Sony</a></div>
-        <div><a href="#">Xiaomi</a></div>
-        <div><a href="#">BlackBerry</a></div>
-        <div><a href="#">LG</a></div>
+        <div><%= link_to('All categories', root_path, class:'All categories')  %></div>
+        <% Category.all.each do |category| %>
+            <div><%= link_to( category.brand_name, root_path(id:category.id), class:'')  %></div>
+        <% end %>
       </div>
     </div>
     <!--Chi danh cho giao dien Mobile-->
@@ -65,13 +62,11 @@
           </form>
         </div>
         <div role="separator" class="divider">BROWSE</div>
-        <div><a href="#">All categories</a></div>
-        <div><a href="#">iPhone</a></div>
-        <div><a href="#">SamSung</a></div>
-        <div><a href="#">Sony</a></div>
-        <div><a href="#">Xiaomi</a></div>
-        <div><a href="#">BlackBerry</a></div>
-        <div><a href="#">LG</a></div>
+        <div><%= link_to('All categories', root_path, class:'All categories')  %></div>
+        <% Category.all.each do |category| %>
+            <div><%= link_to( category.brand_name, root_path(id:category.id), class:'')  %></div>
+        <% end %>
+
         <div class="sign-in-sign-out">
           <% if user_signed_in? %>
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
@@ -93,13 +88,10 @@
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">BROWSE
       </button>
       <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
-        <div><a href="#">All categories</a></div>
-        <div><a href="#">iPhone</a></div>
-        <div><a href="#">SamSung</a></div>
-        <div><a href="#">Sony</a></div>
-        <div><a href="#">Xiaomi</a></div>
-        <div><a href="#">BlackBerry</a></div>
-        <div><a href="#">LG</a></div>
+        <div><%= link_to('All categories', root_path, class:'All categories')  %></div>
+        <% Category.all.each do |category| %>
+            <div><%= link_to( category.brand_name, root_path(id:category.id), class:'')  %></div>
+        <% end %>
       </div>
     </span>
   </div>
