@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20161129165339) do
     t.decimal  "price"
     t.string   "photo_url"
     t.text     "description"
+    t.string   "display"
+    t.string   "os"
+    t.string   "back_camera"
+    t.string   "font_camera"
+    t.string   "cpu"
+    t.string   "ram"
+    t.string   "storage"
+    t.string   "sp_storage"
+    t.string   "sim"
+    t.string   "battery"
     t.integer  "category_id"
   end
 

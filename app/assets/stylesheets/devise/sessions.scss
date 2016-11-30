@@ -1,13 +1,12 @@
-.sign-in-page {
-  margin-top: 20px;
 
-  h4 {
-    color: #730E15;
-    font-size:150%;
-  }
+
+.sign-in-page,.navigation .signin-container-new {
+  line-height: 34px;
 
   h5 {
-    color: #337ab7;
+    color: #0c1525;
+    font-size: 12px;
+    display: inline;
   }
 
   .btn {
@@ -19,6 +18,7 @@
     color: #730E15;
     line-height: 34px;
     vertical-align: middle;
+    font-size: 14px;
   }
 
   .login-container {
@@ -26,8 +26,35 @@
     border-radius: 4px;
     margin-bottom: 15px;
 
+
+
     form {
       padding: 13px;
+
+    }
+
+    .signin-facebook {
+      border: 1px solid rgba(0, 0, 141, 0.68);
+      border-radius: 4px;
+      background-color: rgba(0, 0, 104, 0.82);
+      color: #f0f0f0;
+      padding: 8px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      margin-left: 15px;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:before {
+        vertical-align: middle;
+        font-family: 'FontAwesome';
+        content: '\f230';
+        padding-right: 5px;
+        font-size: 160%;
+      }
     }
 
     .foot {
@@ -35,14 +62,16 @@
       background-color: #eeeeee;
       padding: 10px 20px 10px 20px;
 
+
       .content {
         text-align: justify;
       }
 
       .register-link {
         color: #337ab7;
-        line-height: 30px;
+        line-height: 45px;
         vertical-align: middle;
+        font-size: 15px;
 
         &:hover {
           text-decoration: none;
@@ -53,38 +82,48 @@
           font-family: 'FontAwesome';
           content: '\f054';
           margin-left: 5px;
-          font-size: 150%;
+          font-size: 15px;
         }
       }
     }
   }
 
-  .signin-facebook {
-    border: 1px solid rgba(0, 0, 141, 0.68);
-    border-radius: 4px;
-    background-color: rgba(0, 0, 104, 0.82);
-    color: #f0f0f0;
-    padding: 8px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 95%;
 
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:before {
-      vertical-align: middle;
-      font-family: 'FontAwesome';
-      content: '\f230';
-      padding-right: 5px;
-      font-size: 160%;
-    }
-  }
 
   .separator {
     border-top: 1px dashed gray;
     margin-top: 20px;
     margin-bottom: 10px;
+  }
+}
+
+.sign-in-page {
+  margin-top: 20px;
+
+  h4 {
+    color: #730E15;
+    font-size: 150%;
+  }
+
+  h5 {
+    color: #337ab7;
+    font-size: 15px;
+  }
+  .login-container {
+
+    .foot {
+
+      .register-link {
+        font-size: 25px;
+
+        &:after {
+          vertical-align: middle;
+          font-family: 'FontAwesome';
+          content: '\f054';
+          margin-left: 5px;
+          font-size: 25px;
+        }
+      }
+    }
   }
 }
