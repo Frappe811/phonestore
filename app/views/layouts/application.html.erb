@@ -30,11 +30,22 @@
     <div class="signin-signout hidden-xs">
       <% if user_signed_in? %>
           <li>
-            <%= link_to('SIGN OUT', destroy_user_session_path, :method => :delete) %>
+            <%= link_to('SIGN OUT', destroy_user_session_path, class:"signin-btn", :method => :delete) %>
           </li>
       <% else %>
           <li>
-            <%= link_to('SIGN IN', new_user_session_path)  %>
+            <%= link_to('SIGN IN', '#', 'data-toggle':"modal", class:"signin-btn", 'data-target':"#myModal" ) %>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-body signin-container-new">
+                    <%= render 'devise/sessions/login_form', resource: User.new, resource_name: :user %>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
       <% end %>
     </div>
