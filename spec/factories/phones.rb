@@ -4,5 +4,6 @@ FactoryGirl.define do
     photo_url { Faker::Placeholdit.image('221x221') }
     price { Faker::Number.decimal(2) }
     description { Faker::Lorem.paragraph }
+    category
   end
 end
