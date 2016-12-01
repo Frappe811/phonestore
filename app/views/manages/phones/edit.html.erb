@@ -1,7 +1,12 @@
 <div class="manage-phone-edit">
   <%= render 'form' %>
-
-  <%= link_to 'Preview', [:manages,@phone] %>
-  <%= link_to 'Manages', manages_phones_path %>
+</div>
+<div>
+  <div class="navigate-button col-md-2">
+    <%= link_to 'Preview', [:manages,@phone] %>
+  </div>
+  <div class="navigate-button col-md-2">
+    <%= link_to 'Manages Phone',  manages_phones_path %>
+  </div>
 </div>
 
