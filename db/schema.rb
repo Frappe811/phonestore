@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129165339) do
+ActiveRecord::Schema.define(version: 20161130084753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_lines", force: :cascade do |t|
+    t.integer  "phone_id"
+    t.integer  "cart_id"
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cart_lines", ["cart_id"], name: "index_cart_lines_on_cart_id", using: :btree
+  add_index "cart_lines", ["phone_id"], name: "index_cart_lines_on_phone_id", using: :btree
+
+  create_table "carts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "brand_name"
@@ -63,4 +83,7 @@ ActiveRecord::Schema.define(version: 20161129165339) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "cart_lines", "carts"
+  add_foreign_key "cart_lines", "phones"
+  add_foreign_key "carts", "users"
 end
