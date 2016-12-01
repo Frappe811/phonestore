@@ -1,20 +1,7 @@
-.manage-phone-index {
+.manage-index {
 
   .tools {
     margin-bottom: 25px;
-
-    .add-new-phone {
-      text-align: center;
-      border: 1px solid darkgray;
-      border-radius: 5px;
-      background-color: #82b64a;
-      padding: 2px 8px 2px 8px;
-      width: 150px;
-      a {
-        color: white;
-        text-decoration: none;
-      }
-    }
 
     .btn {
       border: 1px solid darkgray;
@@ -32,10 +19,26 @@
 
 }
 
-.manage-phone-show {
+.manage-show {
   margin-top: 25px;
+
+  .brand-index {
+    margin-bottom: 15px;
+    border-bottom: 1px solid darkgray;
+
+    .brand-form {
+
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
   .phone-index {
     margin-bottom: 15px;
+
+    .errors-message {
+      margin-top: 15px;
+    }
 
     .phone-name {
 
@@ -151,4 +154,10 @@
     color: white;
     text-decoration: none;
   }
+}
+
+.page-title {
+  font-size: 35px;
+  text-align: center;
+  color: #308800;
 }

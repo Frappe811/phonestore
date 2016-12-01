@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :phones, only: [:show, :index]
   namespace :manages do
     resources :phones, except: [:destroy]
+    resources :categories, except: [:destroy]
   end
 end

@@ -1,4 +1,4 @@
-<div class="manage-phone-show">
+<div class="manage-show">
   <%= form_for [:manages, @phone] do |f| %>
       <div class="phone-index">
         <div type class="phone-name">
@@ -21,7 +21,6 @@
           <div class="errors-message col-xs-12 col-sm-6 col-md-5">
             <% if @phone.errors.any? %>
                 <div id="error_explanation">
-                  <h3><%= pluralize(@phone.errors.count, "error") %> prohibited this Phone from being saved:</h3>
                   <ul>
                     <% @phone.errors.full_messages.each do |message| %>
                         <li><%= message %></li>

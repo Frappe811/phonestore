@@ -1,4 +1,4 @@
-<div class="manage-phone-index">
+<div class="manage-index">
   <div class="tools col-md-12">
     <div class="dropdown col-md-2">
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Browse
@@ -10,15 +10,18 @@
         <% end %>
       </ul>
     </div>
-    <div class="add-new-phone col-md-2">
+    <div class="navigate-button col-md-2">
       <%= link_to 'Add new Phone', new_manages_phone_path %>
+    </div>
+    <div class="navigate-button col-md-2">
+      <%= link_to 'Manages Brand',manages_categories_path %>
     </div>
   </div>
   <div class="tables">
     <table class="table table-bordered table-striped">
       <thead>
       <tr>
-        <th class="Name">Name</th>
+        <th>Name</th>
         <th>Brand Name</th>
         <th>Price</th>
         <th>Date Created</th>
