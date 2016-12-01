@@ -1,12 +1,25 @@
 <div class="manage-phone-index">
-  <div class="add-new-phone">
-    <span><%= link_to 'Add new Phone',  new_manages_phone_path %></span>
+  <div class="tools col-md-12">
+    <div class="dropdown col-md-2">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Browse
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><%= link_to('All Phone', manages_phones_path) %></li>
+        <% Category.all.each do |category| %>
+            <li><%= link_to(category.brand_name, manages_phones_path(id: category.id)) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="add-new-phone col-md-2">
+      <%= link_to 'Add new Phone', new_manages_phone_path %>
+    </div>
   </div>
   <div class="tables">
     <table class="table table-bordered table-striped">
       <thead>
       <tr>
         <th class="Name">Name</th>
+        <th>Brand Name</th>
         <th>Price</th>
         <th>Date Created</th>
         <th>Date Modifed</th>
@@ -16,15 +29,16 @@
       </thead>
       <tbody>
       <% @phones.each do |phone| %>
-        <tr>
-          <td><%= link_to phone.name, phone_path(phone), :target=>'blank' %></td>
-          <td><%= phone.price %></td>
-          <td><%= phone.created_at %></td>
-          <td><%= phone.updated_at %></td>
-          <th>X</th>
-          <td><%= link_to "Preview", manages_phone_path(phone) %></td>
-          <td><%= link_to 'Update', edit_manages_phone_path(phone) %></td>
-        </tr>
+          <tr>
+            <td><%= link_to phone.name, phone_path(phone), :target => 'blank' %></td>
+            <td><%= phone.category.brand_name %></td>
+            <td><%= phone.price %></td>
+            <td><%= phone.created_at %></td>
+            <td><%= phone.updated_at %></td>
+            <th>X</th>
+            <td><%= link_to "Preview", manages_phone_path(phone) %></td>
+            <td><%= link_to 'Update', edit_manages_phone_path(phone) %></td>
+          </tr>
       <% end %>
       </tbody>
     </table>

@@ -1,17 +1,29 @@
 .manage-phone-index {
 
-  .add-new-phone {
-    text-align: center;
-    border: 1px solid darkgray;
-    border-radius: 5px;
-    background-color: #82b64a;
-    padding: 2px 8px 2px 8px;
-    margin-top: 20px;
-    width: 150px;
-    a {
-      color: white;
-      text-decoration: none;
+  .tools {
+    margin-bottom: 25px;
+
+    .add-new-phone {
+      text-align: center;
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      background-color: #82b64a;
+      padding: 2px 8px 2px 8px;
+      width: 150px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
+
+    .btn {
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      background-color: #82b64a;
+      padding: 2px 8px 2px 8px;
+      width: 100px;
+    }
+
   }
 
   .tables {
@@ -37,6 +49,11 @@
     .phone-option {
       .price-button {
         width: 110px;
+      }
+
+      #phone_category_id {
+        width: 174px;
+        margin-bottom: 2px;
       }
     }
 

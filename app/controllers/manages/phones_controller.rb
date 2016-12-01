@@ -3,7 +3,13 @@ module Manages
     before_action :set_phone, only: [:show, :edit, :update, :destroy]
 
     def index
-      @phones = Phone.order('name').page(params[:page]).per(12)
+      category = Category.find_by_id(params[:id])
+      @category = category
+      if category == nil
+        @phones = Phone.order('name').page(params[:page]).per(12)
+      else
+        @phones = category.phones.order('name').page(params[:page]).per(12)
+      end
     end
 
     def show
@@ -49,7 +55,7 @@ module Manages
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_params
       params.require(:phone).permit(:name, :price, :photo_url, :description ,:display, :os, :back_camera,
-                                    :font_camera, :cpu, :ram, :storage, :sp_storage, :sim, :battery )
+                                    :font_camera, :cpu, :ram, :storage, :sp_storage, :sim, :battery, :category_id)
     end
   end
 end
