@@ -1,4 +1,4 @@
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
   devise_for :users, controllers: {
       omniauth_callbacks: "users/omniauth_callbacks",
       sessions: 'users/sessions',
@@ -9,4 +9,7 @@
   root to: 'phones#index'
 
   resources :phones, only: [:show, :index]
+  namespace :manages do
+    resources :phones, except: [:destroy]
+  end
 end

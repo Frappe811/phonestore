@@ -1,0 +1,40 @@
+<div class="manage-phone-index">
+  <div class="add-new-phone">
+    <span><%= link_to 'Add new Phone',  new_manages_phone_path %></span>
+  </div>
+  <div class="tables">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th class="Name">Name</th>
+        <th>Price</th>
+        <th>Date Created</th>
+        <th>Date Modifed</th>
+        <th>Visible</th>
+        <th colspan="2">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @phones.each do |phone| %>
+        <tr>
+          <td><%= link_to phone.name, phone_path(phone), :target=>'blank' %></td>
+          <td><%= phone.price %></td>
+          <td><%= phone.created_at %></td>
+          <td><%= phone.updated_at %></td>
+          <th>X</th>
+          <td><%= link_to "Preview", manages_phone_path(phone) %></td>
+          <td><%= link_to 'Update', edit_manages_phone_path(phone) %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @phones, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @phones, :window => 2, theme: 'normal' %>
+  </div>
+</div>

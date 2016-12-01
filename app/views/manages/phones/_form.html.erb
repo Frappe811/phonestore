@@ -1,0 +1,103 @@
+<div class="manage-phone-show">
+  <%= form_for [:manages, @phone] do |f| %>
+      <div class="phone-index">
+        <div type class="phone-name">
+          <span class="name"><%= f.text_field :name, placeholder: "Phone Name" %></span>
+        </div>
+        <div class="row">
+          <div class="phone-image col-xs-12 col-sm-6 col-md-4">
+            <img class="image" src="<%= @phone.photo_url %>">
+            <span><%= f.text_field :photo_url, placeholder: "Photo Url" %></span>
+          </div>
+          <div class="small-description col-xs-12 col-sm-6 col-md-3">
+            <div class="phone-option">
+              <div><%= f.text_field :price, placeholder: "Price" %></div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Disable Item </label>
+              </div>
+            </div>
+          </div>
+          <div class="errors-message col-xs-12 col-sm-6 col-md-5">
+            <% if @phone.errors.any? %>
+                <div id="error_explanation">
+                  <h3><%= pluralize(@phone.errors.count, "error") %> prohibited this Phone from being saved:</h3>
+                  <ul>
+                    <% @phone.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="phone-desciption">
+        <div class="row">
+          <div class="description col-xs-10 col-sm-2 col-md-2 ">
+            <span>Description </span>
+          </div>
+          <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
+            <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#des" aria-hidden="true"></span>
+          </div>
+          <div id="des" class=" collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
+            <span><%= f.text_area :description, placeholder: "Description for phone" %></span>
+          </div>
+        </div>
+      </div>
+      <div class="phone-specifiction">
+        <div class="row">
+          <div class="specification col-xs-10 col-sm-2 col-md-2">
+            <span>Specification</span>
+          </div>
+          <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
+            <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#param" aria-hidden="true"></span>
+          </div>
+          <div id="param" class="collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
+            <div class="parameters">
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Display</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :display %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Operating System</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :os %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Back Camera</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :back_camera %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Font-Camera</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :font_camera %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">CPU</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :cpu %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Ram</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :ram %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Storage</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :storage %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Support Memory Card</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :sp_storage %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Sim</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :sim %></div>
+              </div>
+              <div class="field col-xs-12 col-sm-12 col-md-12">
+                <div class="key col-xs-6 col-sm-6 col-md 4">Battery</div>
+                <div class="col-xs-6 col-sm-6 col-md 8"><%= f.text_field :battery %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="submit"><%= f.submit %></div>
+  <% end %>
+</div>
