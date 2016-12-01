@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20161130084753) do
     t.string   "sp_storage"
     t.string   "sim"
     t.string   "battery"
+    t.integer  "category_id"
   end
 
   create_table "users", force: :cascade do |t|

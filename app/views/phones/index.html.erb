@@ -1,4 +1,13 @@
 <div class="phones-index">
+  <div class="category_bar">
+    <div class="categories">
+      <% if @category == nil %>
+          <div>ALL CATEGORIES</div>
+      <% else %>
+          <div><%= @category.brand_name %></div>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <% @phones.each do |phone| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
