@@ -1,0 +1,72 @@
+.profile_page {
+  h2{
+    color: #730E15;
+    font-size:150%;
+    font-weight: bold;
+  }
+
+  .profile_container {
+    form {
+      padding: 5px;
+
+      .email {
+        border: 1px solid #82b64a;
+        padding: 6px;
+        padding-left: 12px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+
+        .fa-pencil-square-o {
+          font-size: 20px;
+          float: right;
+          margin-right: 5px;
+        }
+      }
+
+      #error_explanation {
+
+        h2 {
+          background-color: rgba(255, 173, 199, 0.36);
+          color: #a95436;
+          font-size: 120%;
+          border: 1px solid #ffdcdd;
+          border-radius: 4px;
+          padding: 15px;
+        }
+
+        li {
+          color: red;
+        }
+      }
+    }
+    .button {
+      text-align: center;
+
+      .btn {
+        background-color: #82B64A;
+        color: white;
+        text-align: center;
+        width: 80px;
+      }
+
+    }
+
+    .backlogin-link {
+      color: #337ab7;
+      vertical-align: middle;
+      margin-left: 5px;
+
+      &:before {
+        vertical-align: middle;
+        font-family: 'FontAwesome';
+        content: '\f177';
+        margin-right: 4px;
+      }
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+}
