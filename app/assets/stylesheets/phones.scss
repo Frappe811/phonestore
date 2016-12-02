@@ -1,55 +1,9 @@
 .phones-index {
   box-sizing: border-box;
-  .category_bar {
-    font-weight: bold;
-    color: white;
-    font-size: 24px;
-    line-height: 47px;
-    background-color: #95d456;
-    width: 100%;
-    left: 0;
-    top: -62;
-    position: absolute;
-
-    .categories {
-        margin-left: 15px;
-      }
-    .search_message {
-      height: 70px;
-      background-color: white;
-      font-weight: bold;
-      font-size: 18px;
-      position: relative;
-      color: black;
-
-      .text {
-        height: 40px;
-        padding-top: 10px;
-        margin-left: 20px;
-
-        .keyword {
-          color: red;
-        }
-
-        .count {
-          color: grey;
-        }
-      }
-
-      .text2 {
-        line-height: 30px;
-        font-size: 12px;
-        color: darkgrey;
-        margin-left: 20px;
-      }
-    }
-
-  }
-
 
   .col-xs-12 {
     .col-xs-10 {
-      padding-top: 124px;
+      //padding-top: 69px;
       padding-bottom: 10px;
 
       .phone-img {
@@ -132,7 +86,8 @@
   }
 
   .line {
-    border-top: 2px solid #82B64A;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #82B64A;
     margin-left: -10000px;
     margin-right: -10000px;
   }

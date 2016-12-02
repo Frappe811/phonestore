@@ -168,5 +168,49 @@
       }
     }
   }
+
+  .category_bar {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    line-height: 47px;
+    background-color: #95d456;
+    width: 100%;
+
+    .categories {
+      margin-left: 15px;
+    }
+
+    .search_message {
+      height: 70px;
+      background-color: white;
+      font-weight: bold;
+      font-size: 18px;
+      position: relative;
+      color: black;
+
+      .text {
+        height: 40px;
+        padding-top: 10px;
+        margin-left: 20px;
+
+        .keyword {
+          color: red;
+        }
+
+        .count {
+          color: grey;
+        }
+      }
+
+      .text2 {
+        line-height: 30px;
+        font-size: 12px;
+        color: darkgrey;
+        margin-left: 20px;
+      }
+    }
+  }
+
 }
 
