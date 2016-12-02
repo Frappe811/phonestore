@@ -1,5 +1,5 @@
 module Manages
-  class PhonesController < ApplicationController
+  class PhonesController < ManagesController
     before_action :set_phone, only: [:show, :edit, :update, :destroy]
 
     def index

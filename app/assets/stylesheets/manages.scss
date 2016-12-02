@@ -8,7 +8,7 @@
       border-radius: 5px;
       background-color: #82b64a;
       padding: 2px 8px 2px 8px;
-      width: 100px;
+      width: 130px;
     }
 
   }
@@ -38,6 +38,10 @@
 
     .errors-message {
       margin-top: 15px;
+
+      .error_explanation{
+        color: red;
+      }
     }
 
     .phone-name {
@@ -159,5 +163,19 @@
 .page-title {
   font-size: 35px;
   text-align: center;
-  color: #308800;
+  color: #82b64a;
+}
+
+.manage-navigtion {
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+
+.bottom-manges {
+  margin-top: 30px;
+  background-color: white;
 }
