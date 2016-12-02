@@ -7,6 +7,26 @@
           <div><%= @category.brand_name %></div>
       <% end %>
     </div>
+    <div class="search_message">
+      <% if @keyword != nil %>
+          <% if @count == 0 %>
+              <div class="text">NO MATCHES FOUND!</div>
+          <% else %>
+              <% if @count == 1 %>
+                  <div class="text">Result for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% else %>
+                <div class="text">Results for
+                  <span class="keyword">"<%= @keyword %>"</span>
+                  <span class="count">(<%= @count %>)</span>
+                </div>
+              <% end %>
+          <% end %>
+      <% end  %>
+    </div>
+
   </div>
   <div class="row">
     <% @phones.each do |phone| %>

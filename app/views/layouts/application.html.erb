@@ -21,7 +21,13 @@
     <!--Thanh Search khong hien thi tren Mobile-->
     <div class="search hidden-xs">
       <form method="get" action="<%= phones_path %>" id="search">
-        <input name="q" type="text" size="40" placeholder="Search..."/>
+        <input name="q" type="text" size="40"
+               <% if @keyword == nil %>
+                  placeholder="Search..."
+               <% else %>
+                  placeholder="<%= @keyword %>" 
+               <% end %>
+               />
       </form>
     </div>
   </div>

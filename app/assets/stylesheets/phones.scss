@@ -11,10 +11,33 @@
     top: -62;
     position: absolute;
 
-      .categories {
+    .categories {
         margin-left: 15px;
       }
+    .search_message {
+      height: 60px;
+      background-color: white;
+      font-weight: bold;
+      font-size: 18px;
+      position: relative;
+      color: black;
+
+      .text {
+        padding-top: 10px;
+        margin-left: 20px;
+
+        .keyword {
+          color: red;
+        }
+
+        .count {
+          color: grey;
+        }
+      }
+    }
+
   }
+
 
   .col-xs-12 {
     .col-xs-10 {

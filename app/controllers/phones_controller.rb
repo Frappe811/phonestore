@@ -3,6 +3,7 @@ class PhonesController < ApplicationController
     category = Category.find_by_id(params[:id])
     keyword = params[:q]
     @category = category
+    @keyword = keyword
     if keyword == nil
       if category == nil
         @phones = Phone.page(params[:page]).per(12)
@@ -11,7 +12,9 @@ class PhonesController < ApplicationController
       end
     else
       @phones = Phone.search_by_name(keyword).page(params[:page]).per(12)
-      # count = Phone.search_by_name(keyword).count
+      count = Phone.search_by_name(keyword).count
+      @count = count
+
     end
   end
 
