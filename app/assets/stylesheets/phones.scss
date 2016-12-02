@@ -3,7 +3,7 @@
 
   .col-xs-12 {
     .col-xs-10 {
-      padding-top: 69px;
+      //padding-top: 69px;
       padding-bottom: 10px;
 
       .phone-img {
@@ -86,7 +86,8 @@
   }
 
   .line {
-    border-top: 2px solid #82B64A;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #82B64A;
     margin-left: -10000px;
     margin-right: -10000px;
   }

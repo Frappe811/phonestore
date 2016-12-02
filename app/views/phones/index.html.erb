@@ -8,6 +8,26 @@
               <div><%= @category.brand_name %></div>
           <% end %>
         </div>
+        <div class="search_message">
+          <% if @keyword != nil && @keyword != "" %>
+              <% if @count == 0 %>
+                  <div class="text">NO MATCHES FOUND!</div>
+                  <div class="text2">Please try another search.</div>
+              <% else %>
+                  <% if @count == 1 %>
+                      <div class="text">Result for
+                        <span class="keyword">"<%= @keyword %>"</span>
+                        <span class="count">(<%= @count %>)</span>
+                      </div>
+                  <% else %>
+                      <div class="text">Results for
+                        <span class="keyword">"<%= @keyword %>"</span>
+                        <span class="count">(<%= @count %>)</span>
+                      </div>
+                  <% end %>
+              <% end %>
+          <% end  %>
+        </div>
       </div>
   <% end %>
   <div class="row">
@@ -30,7 +50,9 @@
     <% end %>
   </div>
   <div class="clearfix"></div>
-  <div class="line"></div>
+  <% if @count != 0 %>
+      <div class="line"></div>
+  <% end  %>
   <div class="pagination-container hidden-xs pull-right">
     <nav>
       <%= paginate @phones, :window => 2, theme: 'large' %>
