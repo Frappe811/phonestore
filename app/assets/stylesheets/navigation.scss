@@ -93,8 +93,13 @@
     .signin-signout {
       color: white;
 
-      li {
-        display: block;
+      .dropdown {
+        .fa-user-o {
+          background-color: #82B64A;
+          height: 62px;
+          border: 0px solid #82B64A;
+          font-size: 24px;
+        }
       }
 
       .signin-btn {

@@ -1,3 +1,3 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  layout "hidenav"
+  layout "hidenav", except: [:edit]
 end
