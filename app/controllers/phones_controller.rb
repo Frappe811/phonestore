@@ -3,7 +3,7 @@ class PhonesController < ApplicationController
     category = Category.find_by_id(params[:id])
     @category = category
     if category == nil
-      @phones = Phone.page(params[:page]).per(12)
+      @phones = Phone.order('name').where(flag: true).page(params[:page]).per(12)
     else
       @phones = category.phones.page(params[:page]).per(12)
     end

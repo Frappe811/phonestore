@@ -55,7 +55,7 @@ module Manages
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_params
       params.require(:phone).permit(:name, :price, :photo_url, :description ,:display, :os, :back_camera,
-                                    :font_camera, :cpu, :ram, :storage, :sp_storage, :sim, :battery, :category_id)
+                                    :font_camera, :cpu, :ram, :storage, :sp_storage, :sim, :battery, :category_id, :flag)
     end
   end
 end

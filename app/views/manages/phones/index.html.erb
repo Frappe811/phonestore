@@ -38,7 +38,7 @@
             <td><%= phone.price %></td>
             <td><%= phone.created_at %></td>
             <td><%= phone.updated_at %></td>
-            <th>X</th>
+            <th><%= phone.flag %></th>
             <td><%= link_to "Preview", manages_phone_path(phone) %></td>
             <td><%= link_to 'Update', edit_manages_phone_path(phone) %></td>
           </tr>

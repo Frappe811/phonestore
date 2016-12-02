@@ -11,11 +11,10 @@
           </div>
           <div class="small-description col-xs-12 col-sm-6 col-md-3">
             <div class="phone-option">
-              <div><%= f.select :category_id, Category.all.collect {|c| [c.brand_name, c.id]} %></div>
+              <div><%= f.select :category_id, Category.all.collect {|c| [c.brand_name, c.id]}  %></div>
               <div><%= f.text_field :price, placeholder: "Price" %></div>
-              <div class="checkbox">
-                <label><input type="checkbox" value="">Disable Item </label>
-              </div>
+              <div class="col-md-3">Visible</div>
+              <div class="col-md-1"><%= f.check_box :flag %></div>
             </div>
           </div>
           <div class="errors-message col-xs-12 col-sm-6 col-md-5">

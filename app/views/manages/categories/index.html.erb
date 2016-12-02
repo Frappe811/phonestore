@@ -24,7 +24,7 @@
             <td><%= category.brand_name %></td>
             <td><%= category.created_at %></td>
             <td><%= category.updated_at %></td>
-            <th>X</th>
+            <th><%= category.flag %></th>
             <td><%= link_to 'Update', edit_manages_category_path(category) %></td>
           </tr>
       <% end %>
