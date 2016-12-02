@@ -32,7 +32,7 @@ module Manages
     def update
 
       if @category.update(category_params)
-        redirect_to manages_categories_path
+        render :edit
       else
         @category.errors
         render :edit
