@@ -45,7 +45,7 @@
       background-position: 5px 4px;
       border: 0 none;
       font: bold 12px Arial, Helvetica, Sans-serif;
-      color: #777;
+      color: black;
       width: 250px;
       padding: 6px 15px 6px 45px;
       -webkit-border-radius: 20px;
@@ -132,19 +132,19 @@
         }
 
         .search_for_mobile {
+          margin-bottom: 5px;
+
           input[type="text"] {
+            padding-left: 10px;
             background: url("search-dark.png") no-repeat white;
             background-size: 30px 30px;
             background-position: 120px 4px;
+            color: black;
           }
-          .form {
-            margin-bottom: 5px;
-
-            .ss {
-              width: 158px;
-              margin-right: 5px;
-              margin-left: 5px;
-            }
+          .ss {
+            width: 158px;
+            margin-right: 5px;
+            margin-left: 5px;
           }
         }
 

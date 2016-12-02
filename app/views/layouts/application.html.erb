@@ -21,13 +21,7 @@
     <!--Thanh Search khong hien thi tren Mobile-->
     <div class="search hidden-xs">
       <form method="get" action="<%= phones_path %>" id="search">
-        <input name="q" type="text" size="40"
-               <% if @keyword == nil %>
-                  placeholder="Search..."
-               <% else %>
-                  placeholder="<%= @keyword %>" 
-               <% end %>
-               />
+        <input name="q" type="text" size="40" placeholder="Search..." value="<%= @keyword %>"/>
       </form>
     </div>
   </div>
@@ -74,8 +68,8 @@
       </button>
       <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
         <div class="search_for_mobile visible-xs">
-          <form class="form" method="get" action="/search" id="search">
-            <input class="ss" name="q" type="text" size="40"/>
+          <form method="get" action="<%= phones_path %>" id="search">
+            <input class="ss" name="q" type="text" size="40" placeholder="Search..." value="<%= @keyword %>"/>
           </form>
         </div>
         <div role="separator" class="divider">BROWSE</div>
