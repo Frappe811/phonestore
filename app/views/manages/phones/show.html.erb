@@ -1,0 +1,95 @@
+<div class="manage-show">
+  <div class="phone-index">
+    <div type class="phone-name">
+      <span class="name"><%= @phone.name %></span>
+    </div>
+    <div class="row">
+      <div class="phone-image col-xs-12 col-sm-6 col-md-4">
+        <img class="image" src="<%= @phone.photo_url %>">
+      </div>
+      <div class="small-description col-xs-12 col-sm-6 col-md-4">
+        <div class="phone-option">
+          <button type="button" class="price-button btn btn-default"><%= number_to_currency @phone.price, precision: 0 %>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone-desciption">
+    <div class="row">
+      <div class="description col-xs-10 col-sm-2 col-md-2 ">
+        <span>Description </span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#des" aria-hidden="true"></span>
+      </div>
+      <div id ="des" class=" collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
+      <span><%= @phone.description %>
+      </span>
+      </div>
+    </div>
+  </div>
+  <div class="phone-specifiction">
+    <div class="row">
+      <div class="specification col-xs-10 col-sm-2 col-md-2">
+        <span>Specification</span>
+      </div>
+      <div class="col-xs-2 col-sm-1 col-sm-push-9 col-md-1 col-md-push-9" style="margin-top: 15px">
+        <span class="collapse-button fa fa-chevron-down" data-toggle="collapse" data-target="#param" aria-hidden="true"></span>
+      </div>
+      <div id="param"class="collapse in col-xs-12 col-sm-9 col-sm-pull-1 col-md-9 col-md-pull-1">
+        <div class="parameters">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Display</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.display %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Operating System</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.os %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Back Camera</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.back_camera %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Font-Camera</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.font_camera %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">CPU</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.cpu %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Ram</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.ram %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Storage</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.storage %></div>
+          </div >
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Support Memory Card</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.sp_storage %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Sim</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.sim %></div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="key col-xs-6 col-sm-6 col-md 4">Battery</div>
+            <div class="col-xs-6 col-sm-6 col-md 8"><%= @phone.battery %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="navigate-button col-md-2">
+      <%= link_to 'Update Phone', edit_manages_phone_path %>
+    </div>
+    <div class="navigate-button col-md-2">
+      <%= link_to 'Manages Phone',  manages_phones_path %>
+    </div>
+  </div>
+</div>

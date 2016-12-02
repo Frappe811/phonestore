@@ -1,0 +1,54 @@
+<div class="manage-index">
+  <div class="tools col-md-12">
+    <div class="dropdown col-md-2">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Browse
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><%= link_to('All Phone', manages_phones_path) %></li>
+        <% Category.all.each do |category| %>
+            <li><%= link_to(category.brand_name, manages_phones_path(id: category.id)) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="navigate-button col-md-2">
+      <%= link_to 'Add new Phone', new_manages_phone_path %>
+    </div>
+  </div>
+  <div class="tables">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Brand Name</th>
+        <th>Price</th>
+        <th>Date Created</th>
+        <th>Date Modifed</th>
+        <th>Visible</th>
+        <th colspan="2">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @phones.each do |phone| %>
+          <tr>
+            <td><%= link_to phone.name, phone_path(phone), :target => 'blank' %></td>
+            <td><%= phone.category.brand_name %></td>
+            <td><%= phone.price %></td>
+            <td><%= phone.created_at %></td>
+            <td><%= phone.updated_at %></td>
+            <th><%= phone.flag %></th>
+            <td><%= link_to "Preview", manages_phone_path(phone) %></td>
+            <td><%= link_to 'Update', edit_manages_phone_path(phone) %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @phones, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @phones, :window => 2, theme: 'normal' %>
+  </div>
+</div>

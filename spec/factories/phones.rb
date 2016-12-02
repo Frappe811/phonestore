@@ -15,5 +15,6 @@ FactoryGirl.define do
     sp_storage { "#{Faker::Number.number(3)} GB" }
     sim { "#{Faker::Number.between(1, 2)} Sim" }
     battery { "#{Faker::Number.number(4)} mAh" }
+    flag { Faker::Boolean.boolean }
   end
 end
