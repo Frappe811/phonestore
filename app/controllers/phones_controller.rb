@@ -6,15 +6,15 @@ class PhonesController < ApplicationController
     @keyword = keyword
     if keyword == nil
       if category == nil
-        @phones = Phone.page(params[:page]).per(12)
+        @phones = Phone.order('name').where(flag: true).page(params[:page]).per(12)
       else
         @phones = category.phones.page(params[:page]).per(12)
       end
     else
       if keyword == ""
-        @phones = Phone.page(params[:page]).per(12)
+        @phones = Phone.order('name').where(flag: true).page(params[:page]).per(12)
       else
-        @phones = Phone.search_by_name(keyword).page(params[:page]).per(12)
+        @phones = Phone.search_by_name(keyword).order('name').where(flag: true).page(params[:page]).per(12)
         @count = @phones.total_count
       end
     end

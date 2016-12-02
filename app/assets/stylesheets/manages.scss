@@ -1,0 +1,181 @@
+.manage-index {
+
+  .tools {
+    margin-bottom: 25px;
+
+    .btn {
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      background-color: #82b64a;
+      padding: 2px 8px 2px 8px;
+      width: 130px;
+    }
+
+  }
+
+  .tables {
+    margin-top: 25px;
+  }
+
+}
+
+.manage-show {
+  margin-top: 25px;
+
+  .brand-index {
+    margin-bottom: 15px;
+    border-bottom: 1px solid darkgray;
+
+    .brand-form {
+
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .phone-index {
+    margin-bottom: 15px;
+
+    .errors-message {
+      margin-top: 15px;
+
+      .error_explanation{
+        color: red;
+      }
+    }
+
+    .phone-name {
+
+      .name {
+        font-size: 24px;
+        margin-left: 10px;
+        font-weight: bold;
+      }
+    }
+
+    .phone-option {
+      .price-button {
+        width: 110px;
+      }
+
+      #phone_category_id {
+        width: 174px;
+        margin-bottom: 2px;
+      }
+    }
+
+    .phone-image {
+      margin-top: 15px;
+      text-align: center;
+      display: inline;
+
+      .image {
+        width: 221px;
+        height: 221px;
+        object-fit: cover;
+      }
+    }
+
+    .small-description {
+      margin-top: 15px;
+    }
+    .btn-default {
+      background-color: #82b64a;
+      color: white;
+    }
+  }
+
+  .phone-desciption {
+    margin-bottom: 15px;
+
+    .description {
+      margin-top: 15px;
+      font-size: 17px;
+      color: #82b64a;
+    }
+
+    #des {
+      margin-top: 15px;
+      text-align: justify;
+
+      textarea {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  }
+
+  .phone-specifiction {
+    margin-bottom: 15px;
+    border-bottom: 1px solid darkgray;
+
+    .specification {
+      margin-top: 15px;
+      font-size: 17px;
+      color: #82b64a;
+    }
+
+    .field {
+      margin-bottom: 2px;
+
+      .key {
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+
+    #param {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .row {
+    border-top: 1px solid darkgray;
+  }
+
+  .collapse-button {
+    color: #82b64a;
+
+  }
+
+  .submit {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
+}
+
+.navigate-button {
+  text-align: center;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  background-color: #82b64a;
+  padding: 2px 8px 2px 8px;
+  width: 150px;
+  margin-right: 5px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.page-title {
+  font-size: 35px;
+  text-align: center;
+  color: #82b64a;
+}
+
+.manage-navigtion {
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+}
+
+.bottom-manges {
+  margin-top: 30px;
+  background-color: white;
+}
