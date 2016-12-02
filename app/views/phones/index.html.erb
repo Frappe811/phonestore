@@ -8,7 +8,7 @@
       <% end %>
     </div>
     <div class="search_message">
-      <% if @keyword != nil %>
+      <% if @keyword != nil && @keyword != "" %>
           <% if @count == 0 %>
               <div class="text">NO MATCHES FOUND!</div>
               <div class="text2">Please try another search.</div>

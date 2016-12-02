@@ -11,10 +11,12 @@ class PhonesController < ApplicationController
         @phones = category.phones.page(params[:page]).per(12)
       end
     else
-      @phones = Phone.search_by_name(keyword).page(params[:page]).per(12)
-      count = Phone.search_by_name(keyword).count
-      @count = count
-
+      if keyword == ""
+        @phones = Phone.page(params[:page]).per(12)
+      else
+        @phones = Phone.search_by_name(keyword).page(params[:page]).per(12)
+        @count = @phones.total_count
+      end
     end
   end
 
