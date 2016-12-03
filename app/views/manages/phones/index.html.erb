@@ -10,9 +10,35 @@
         <% end %>
       </ul>
     </div>
-    <div>
+    <div class="col-md-2">
       <%= link_to new_manages_phone_path do %>
           <button type="button" class="btn btn-success">Add new Phone</button>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <form method="get" action="<%= manages_phones_path %>" id="search">
+        <input class="search-term" name="qphone" type="text" size="40" placeholder="Search for phone..." value="<%= @keyword %>"/>
+        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button class="reset-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    <div class="search_message col-md-3">
+      <% if @keyword != nil && @keyword != "" %>
+          <% if @count == 0 %>
+              <div class="text">NO MATCHES FOUND!</div>
+          <% else %>
+              <% if @count == 1 %>
+                  <div class="text">Result for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% else %>
+                  <div class="text">Results for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% end %>
+          <% end %>
       <% end %>
     </div>
   </div>
@@ -66,4 +92,13 @@
   <div class="pagination-container visible-xs text-center">
     <%= paginate @phones, :window => 2, theme: 'normal' %>
   </div>
+  <script>
+    $(function() {
+      $('.reset-btn').click(function() {
+        debugger;
+        var term = $(this).siblings('.search-term');
+        term.val('');
+      })
+    })
+  </script>
 </div>

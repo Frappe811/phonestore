@@ -3,7 +3,18 @@ module Manages
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 
     def index
+      keyword = params[:qcategory]
+      @keyword = keyword
+      if keyword == nil
         @categories = Category.order('brand_name').page(params[:page]).per(12)
+      else
+        if keyword == ""
+          @categories = Category.order('brand_name').page(params[:page]).per(12)
+        else
+          @categories = Category.search_by_brand_name(keyword).order('brand_name').page(params[:page]).per(12)
+          @count = @categories.total_count
+        end
+      end
     end
 
     def show
