@@ -13,18 +13,26 @@
       max-width: 500px;
       margin: 0 auto;
 
-      .email {
-        border: 1px solid #82b64a;
-        padding: 6px;
-        padding-left: 12px;
-        border-radius: 4px;
-        margin-bottom: 10px;
+      .title {
+        font-weight: bold;
 
-        .fa-pencil-square-o {
-          font-size: 20px;
-          float: right;
-          margin-right: 5px;
-        }
+      }
+
+
+
+      .input-label {
+        height: 34px;
+        display: block;
+        background-color: #eee;
+        padding: 6px 12px;
+        border: 1px solid grey;
+        border-radius: 4px;
+      }
+
+      .fa-pencil-square-o {
+        font-size: 20px;
+        float: right;
+        margin-right: 5px;
       }
 
       #error_explanation {
