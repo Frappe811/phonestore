@@ -15,6 +15,36 @@
 
   .tables {
     margin-top: 25px;
+
+    .table {
+
+      .colume-name {
+        text-align: center;
+      }
+
+      .colume-value {
+        font-weight: bold;
+        a {
+          text-decoration: none;
+          color: #333333;
+        }
+      }
+
+      .colume-checkbox {
+        text-align: center;
+      }
+
+      .colume-action {
+        text-align: center;
+      }
+      .btn {
+        text-align: center;
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        background-color: #82b64a;
+        padding: 2px 8px 2px 8px;
+      }
+    }
   }
 
 }
@@ -39,7 +69,7 @@
     .errors-message {
       margin-top: 15px;
 
-      .error_explanation{
+      .error_explanation {
         color: red;
       }
     }
@@ -146,20 +176,6 @@
   }
 }
 
-.navigate-button {
-  text-align: center;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  background-color: #82b64a;
-  padding: 2px 8px 2px 8px;
-  width: 150px;
-  margin-right: 5px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-}
-
 .page-title {
   font-size: 35px;
   text-align: center;
@@ -175,15 +191,18 @@
   }
 }
 
-.manage-navigtion-sign-out {
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-  }
-}
-
 .bottom-manges {
   margin-top: 30px;
   background-color: white;
+}
+
+.navigate-button {
+  .btn {
+    text-align: center;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #82b64a;
+    padding: 2px 8px 2px 8px;
+    width: 130px;
+  }
 }

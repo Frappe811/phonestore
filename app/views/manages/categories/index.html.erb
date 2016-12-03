@@ -1,28 +1,39 @@
 <div class="manage-index">
   <div class="tools col-md-12">
-    <div class="navigate-button col-md-2">
-      <%= link_to 'Add new Brand', new_manages_category_path %>
+    <div>
+      <%= link_to new_manages_category_path do %>
+          <button type="button" class="btn btn-success">Add new Brand</button>
+      <% end %>
     </div>
   </div>
   <div class="tables">
     <table class="table table-bordered table-striped">
       <thead>
       <tr>
-        <th>Brand Name</th>
-        <th>Date Created</th>
-        <th>Date Modifed</th>
-        <th>Visible</th>
-        <th colspan="1">Action</th>
+        <th class="colume-name">Brand Name</th>
+        <th class="colume-name">Date Created</th>
+        <th class="colume-name">Date Modifed</th>
+        <th class="colume-name">Visible</th>
+        <th colspan="1" class="colume-name">Action</th>
       </tr>
       </thead>
       <tbody>
       <% @categories.each do |category| %>
           <tr>
-            <td><%= category.brand_name %></td>
+            <td class="colume-value"><%= category.brand_name %></td>
             <td><%= category.created_at %></td>
             <td><%= category.updated_at %></td>
-            <th><%= category.flag %></th>
-            <td><%= link_to 'Update', edit_manages_category_path(category) %></td>
+            <% if category.flag==true %>
+                <td class="colume-checkbox"><input type="checkbox" checked onclick="return false;" readonly="readonly">
+                </td>
+            <% else %>
+                <td class="colume-checkbox">
+                  <input type="checkbox" unchecked onclick="return false;" readonly="readonly"></td>
+            <% end %>
+            <td class="colume-action"><%= link_to edit_manages_category_path(category) do %>
+                  <button type="button" class="btn btn-success">Update</button>
+              <% end %>
+            </td>
           </tr>
       <% end %>
       </tbody>
