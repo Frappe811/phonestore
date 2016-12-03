@@ -38,7 +38,7 @@ module Manages
     def update
 
         if @phone.update(phone_params)
-          redirect_to [:manages,@phone]
+          render :edit
         else
           @phone.errors
           render :edit
