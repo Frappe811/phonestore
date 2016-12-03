@@ -1,13 +1,17 @@
 .profile_page {
+
   h2{
     color: #730E15;
-    font-size:150%;
+    font-size:170%;
     font-weight: bold;
+    padding-bottom: 15px;
   }
 
   .profile_container {
     form {
       padding: 5px;
+      max-width: 500px;
+      margin: 0 auto;
 
       .email {
         border: 1px solid #82b64a;
@@ -47,6 +51,8 @@
         color: white;
         text-align: center;
         width: 80px;
+        margin-left: 5px;
+        margin-right: 5px;
       }
 
     }
