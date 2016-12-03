@@ -86,10 +86,14 @@
   </div>
   <div>
     <div class="navigate-button col-md-2">
-      <%= link_to 'Update Phone', edit_manages_phone_path %>
+      <%= link_to edit_manages_phone_path do %>
+          <button type="button" class="btn btn-success">Update Phone</button>
+      <%end %>
     </div>
     <div class="navigate-button col-md-2">
-      <%= link_to 'Manages Phone',  manages_phones_path %>
+      <%= link_to manages_phones_path do %>
+          <button type="button" class="btn btn-success">Manges Phone</button>
+      <%end %>
     </div>
   </div>
 </div>

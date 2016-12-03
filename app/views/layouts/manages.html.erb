@@ -24,7 +24,10 @@
     <!--Chi danh cho giao dien Mobile-->
     <!--Chi danh cho giao dien Destop(Large)-->
     <% if admin_signed_in? %>
-        <span class="manage-navigtion-sign-out"><%= link_to('Sign Out', destroy_admin_session_path, class:"signin-btn", :method => :delete) %></span>
+        <span class="manage-navigtion"><%= link_to destroy_admin_session_path, :method => :delete do %>
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <%end  %>
+        </span>
     <%end  %>
     <span class="manage-navigtion"><%= link_to 'Manage Brand', manages_categories_path %></span>
     <span class="manage-navigtion"><%= link_to 'Manage Phones', manages_phones_path %></span>

@@ -4,10 +4,14 @@
 </div>
 <div>
   <div class="navigate-button col-md-2">
-    <%= link_to 'Preview', [:manages,@phone] %>
+    <%= link_to [:manages,@phone] do %>
+        <button type="button" class="btn btn-success">Preview</button>
+    <%end %>
   </div>
   <div class="navigate-button col-md-2">
-    <%= link_to 'Manages Phone',  manages_phones_path %>
+    <%= link_to manages_phones_path do %>
+        <button type="button" class="btn btn-success">Manages</button>
+    <%end %>
   </div>
 </div>
 
