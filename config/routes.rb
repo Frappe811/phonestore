@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root to: 'phones#index'
 
   resources :phones, only: [:show, :index]
+  resources :orders
   namespace :manages do
     resources :phones, except: [:destroy]
     resources :categories, except: [:destroy]

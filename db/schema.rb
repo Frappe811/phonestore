@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202084329) do
+ActiveRecord::Schema.define(version: 20161204014509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,11 @@ ActiveRecord::Schema.define(version: 20161202084329) do
   add_index "cart_lines", ["cart_id"], name: "index_cart_lines_on_cart_id", using: :btree
   add_index "cart_lines", ["phone_id"], name: "index_cart_lines_on_phone_id", using: :btree
 
-  create_table "carts", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "status"
   end
 
   add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
@@ -94,7 +95,7 @@ ActiveRecord::Schema.define(version: 20161202084329) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "cart_lines", "carts"
+  add_foreign_key "cart_lines", "orders"
   add_foreign_key "cart_lines", "phones"
-  add_foreign_key "carts", "users"
+  add_foreign_key "orders", "users"
 end
