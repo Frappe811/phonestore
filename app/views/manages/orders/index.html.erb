@@ -1,13 +1,8 @@
 <div class="manage-index">
   <div class="tools col-md-12">
-    <div class="col-md-2">
-      <%= link_to new_manages_category_path do %>
-          <button type="button" class="btn btn-success">Add new Brand</button>
-      <% end %>
-    </div>
     <div class="col-md-5">
-      <form method="get" action="<%= manages_categories_path %>" id="search">
-        <input class="search-term" name="qcategory" type="text" size="40" placeholder="Search for brand..." value="<%= @keyword %>"/>
+      <form method="get" action="<%= manages_orders_path %>" id="search">
+        <input class="search-term" name="qorder" type="text" size="40" placeholder="Search for order..." value="<%= @keyword %>"/>
         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         <button class="reset-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
       </form>
@@ -36,29 +31,28 @@
     <table class="table table-bordered table-striped">
       <thead>
       <tr>
-        <th class="colume-name">Brand Name</th>
-        <th class="colume-name">Date Created</th>
-        <th class="colume-name">Date Modifed</th>
-        <th class="colume-name">Visible</th>
+        <th class="colume-name">Order #</th>
+        <th class="colume-name">Name</th>
+        <th class="colume-name">Date</th>
+        <th class="colume-name">Total</th>
+        <th class="colume-name">Status</th>
         <th colspan="1" class="colume-name">Action</th>
       </tr>
       </thead>
       <tbody>
-      <% @categories.each do |category| %>
+      <% @carts.each do |cart| %>
           <tr>
-            <td class="colume-value"><%= category.brand_name %></td>
-            <td class="colume-text-center"><%= category.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
-            <td class="colume-text-center"><%= category.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
-            <% if category.flag==true %>
-                <td class="colume-checkbox"><input type="checkbox" checked onclick="return false;" readonly="readonly">
-                </td>
-            <% else %>
-                <td class="colume-checkbox">
-                  <input type="checkbox" unchecked onclick="return false;" readonly="readonly"></td>
-            <% end %>
-            <td class="colume-action"><%= link_to edit_manages_category_path(category) do %>
-                  <button type="button" class="btn btn-success">Update</button>
+            <td><%= cart.id %></td>
+            <td class="colume-value"><%= cart.user.name %></td>
+            <td class="colume-text-center"><%= cart.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z")%></td>
+            <td class="colume-text-center">900</td>
+            <td class="colume-text-center"><% if cart.status==true %>
+                Completed
+              <% else %>
+                Incomplete
               <% end %>
+            </td>
+            <td class="colume-action"><button type="button" class="btn btn-success">Details</button></td>
             </td>
           </tr>
       <% end %>
@@ -67,11 +61,11 @@
   </div>
   <div class="pagination-container hidden-xs pull-right">
     <nav>
-      <%= paginate @categories, :window => 2, theme: 'large' %>
+      <%= paginate @carts, :window => 2, theme: 'large' %>
     </nav>
   </div>
   <div class="pagination-container visible-xs text-center">
-    <%= paginate @categories, :window => 2, theme: 'normal' %>
+    <%= paginate @carts, :window => 2, theme: 'normal' %>
   </div>
   <script>
     $(function() {

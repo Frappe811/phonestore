@@ -60,9 +60,9 @@
           <tr>
             <td class="colume-value"><%= link_to phone.name, phone_path(phone), :target => 'blank' %></td>
             <td><%= phone.category.brand_name %></td>
-            <td><%= number_to_currency(phone.price, delimiter: "", format: "%n %u") %></td>
-            <td><%= phone.created_at.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
-            <td><%= phone.updated_at.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+            <td class="colume-text-center"><%= number_to_currency(phone.price, delimiter: "", format: "%n %u") %></td>
+            <td class="colume-text-center"><%= phone.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+            <td class="colume-text-center"><%= phone.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
 
             <% if phone.flag == true %>
                 <td class="colume-checkbox"><input type="checkbox" checked onclick="return false;" readonly="readonly">
