@@ -15,9 +15,9 @@ module Manages
         end
       else
         if keyword == ""
-          @phones = Phone.order('name').where(flag: true).page(params[:page]).per(12)
+          @phones = Phone.order('name').page(params[:page]).per(12)
         else
-          @phones = Phone.search_by_name(keyword).order('name').where(flag: true).page(params[:page]).per(12)
+          @phones = Phone.search_by_name(keyword).order('name').page(params[:page]).per(12)
           @count = @phones.total_count
         end
       end
