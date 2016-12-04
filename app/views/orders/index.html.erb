@@ -7,14 +7,14 @@
             <div class="order-number col-xs-3">Order #</div>
             <div class="order-date col-xs-4">Date</div>
             <div class="order-total col-xs-2">Total</div>
-            <div class="order-status col-xs-2">Status</div>
+            <div class="order-status col-xs-3">Status</div>
           </div>
           <% @carts.each do |cart| %>
               <div class="order-columes-field col-xs-12">
                 <div class="order-number col-xs-3"><%= cart.id %></div>
                 <div class="order-date col-xs-4"><%= cart.created_at.strftime("%d/%m/%Y") %></div>
                 <div class="order-total col-xs-2">900 $</div>
-                <div class="order-status col-xs-2">
+                <div class="order-status col-xs-3">
                   <% if cart.status ==true %> Completed
                       <% else %> Incomplete
                   <% end %>
