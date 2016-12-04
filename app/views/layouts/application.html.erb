@@ -49,7 +49,15 @@
           </li>
       <% end %>
     </div>
-    <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
+
+    <a href="/carts">
+      <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true">
+      <span class="badge">
+        <%= Cart.find_by(id:session[:cart_id]).num_of_phone  %>
+      </span>
+      </i>
+    </a>
+
     <div class="dropdown">
       <button class="fa fa-bars visible-sm dropdown-toggle" type="button"
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -97,7 +105,13 @@
         </div>
       </div>
     </div>
-    <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true"></i>
+    <a href="/carts">
+      <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true">
+      <span class="badge">
+        <%= Cart.find_by(id:session[:cart_id]).num_of_phone  %>
+      </span>
+      </i>
+    </a>
     <!--Chi danh cho giao dien Destop(Large)-->
     <span class="dropdown">
       <button class="browse hidden-xs hidden-sm" type="button"

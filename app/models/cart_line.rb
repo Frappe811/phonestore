@@ -1,5 +1,5 @@
 class CartLine < ActiveRecord::Base
-  belongs_to :phones
+  belongs_to :phone
   belongs_to :cart
 
   validates :phone ,:cart ,:quantity ,presence:true

@@ -1,0 +1,59 @@
+.container{
+
+  .carts-show {
+
+    .sum-of-phone {
+      margin-bottom: 10px;
+
+
+     .badge {
+       padding: 20px;
+       font-size: 15px;
+       background-color: #a60000;
+
+     }
+
+    }
+    .badge {
+      padding: 20px;
+      font-size: 15px;
+      background-color: #a60000;
+    }
+
+    .list_cart_line {
+      margin-top: 10px;
+
+
+      .show-container {
+        margin-bottom: 15px;
+        border: 1px solid rgba(210, 205, 208, 0.58);
+        border-radius: 4px;
+        line-height: 200px;
+        padding : 10px;
+
+
+        .phone-price {
+          font-size: 17px;
+          font-weight: bold;
+          color: red;
+          margin-left: 10px;
+          padding-bottom: 10px;
+        }
+
+        a {
+
+          i {
+            font-size: 30px;
+            line-height: 200px
+          }
+        }
+
+        .phone-name {
+          font-weight: bold;
+          font-size: 15px;
+        }
+
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+
 <div class="phones-index">
   <div class="row">
     <% @phones.each do |phone| %>
@@ -11,10 +12,16 @@
             </div>
             <div class="phone-price"><%= number_to_currency phone.price, precision: 0 %></div>
             <div class="phone-cart">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <a href="<%= add_to_carts_path(phone_id: phone.id) %>">
+                  <i class="fa fa-shopping-cart" aria-hidden="true">
+                  </i>
+              </a>
+
               <span class="buy">MUA NGAY</span>
+
             </div>
           </div>
+
         </div>
     <% end %>
   </div>
