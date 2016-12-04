@@ -29,11 +29,19 @@
     <!--Chi danh cho giao dien Ipad-->
     <div class="signin-signout hidden-xs">
       <% if user_signed_in? %>
-          <li>
-            <%= link_to('SIGN OUT', destroy_user_session_path, class:"signin-btn", :method => :delete) %>
-          </li>
+          <div class="dropdown">
+            <button class="fa fa-user-o hidden-xs dropdown-toggle" type="button"
+                    id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            </button>
+            <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
+              <div role="separator" class="divider">Hi <%= current_user.name %></div>
+              <div><%= link_to('Profile', edit_user_registration_path)  %></div>
+              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
+            </div>
+          </div>
       <% else %>
-          <li>
+
             <%= link_to('SIGN IN', '#', 'data-toggle':"modal", class:"signin-btn", 'data-target':"#myModal" ) %>
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
@@ -46,7 +54,7 @@
                 </div>
               </div>
             </div>
-          </li>
+
       <% end %>
     </div>
     <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
@@ -81,7 +89,7 @@
         <div class="sign-in-sign-out">
           <% if user_signed_in? %>
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
-              <div><%= link_to('Profile', new_user_session_path)  %></div>
+              <div><%= link_to('Profile', edit_user_registration_path)  %></div>
               <div><%= link_to('Past Order', new_user_session_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
           <% else %>
