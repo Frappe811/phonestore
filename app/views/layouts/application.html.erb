@@ -90,7 +90,7 @@
           <% if user_signed_in? %>
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
               <div><%= link_to('Profile', edit_user_registration_path)  %></div>
-              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Order history', orders_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
           <% else %>
               <div role="separator" class="divider">GUEST</div>
