@@ -6,7 +6,7 @@
         <%= devise_error_messages! %>
 
         <% x = resource.errors.to_hash.keys %>
-
+        <!--Name-->
         <div class="form-group">
           <span class="title">Name</span>
           <i class="icon fa fa-pencil-square-o btn-name"></i>
@@ -17,7 +17,7 @@
             </span>
           </div>
         </div>
-
+        <!--Email-->
         <div class="form-group">
           <span class="title">Email</span>
           <i class="icon fa fa-pencil-square-o btn-email"></i>
@@ -28,32 +28,27 @@
             </span>
           </div>
         </div>
-
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-
+        <!--Current Password-->
         <div class="form-group">
           <span class="title">Password</span>
           <i class="icon fa fa-pencil-square-o btn-current_password btn-password btn-password_confirmation"></i>
           <%= f.password_field :current_password, autocomplete: "off", value: nil, class: 'form-control' %></br>
-
+        <!--New Password-->
           <div class="input hidden">
-
             <%= f.label :password, "New Password" %>
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %></br>
             <% if @minimum_password_length %>
-                <br />
                 <!--<em><%= @minimum_password_length %> characters minimum</em><br />-->
             <% end %>
-
+            <!--Password_confirmation-->
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-
-
           </div>
         </div>
-
+        <!--Cancel&Save-->
         <div class="button">
           <span class="actions">
           <%= link_to("CANCEL", root_path ,class:'btn') %>
@@ -64,7 +59,6 @@
 
         </div>
     <% end %>
-    <!--<%= link_to "Back", :back%>-->
   </div>
   <script>
     var errors = <%= raw x.map { |key| key.to_s } %>;
