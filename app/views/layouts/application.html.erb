@@ -20,8 +20,8 @@
     <% end %>
     <!--Thanh Search khong hien thi tren Mobile-->
     <div class="search hidden-xs">
-      <form method="get" action="/search" id="search">
-        <input name="q" type="text" size="40" placeholder="Search..."/>
+      <form method="get" action="<%= phones_path %>" id="search">
+        <input name="q" type="text" size="40" placeholder="Search..." value="<%= @keyword %>"/>
       </form>
     </div>
   </div>
@@ -29,11 +29,19 @@
     <!--Chi danh cho giao dien Ipad-->
     <div class="signin-signout hidden-xs">
       <% if user_signed_in? %>
-          <li>
-            <%= link_to('SIGN OUT', destroy_user_session_path, class:"signin-btn", :method => :delete) %>
-          </li>
+          <div class="dropdown">
+            <button class="fa fa-user-o hidden-xs dropdown-toggle" type="button"
+                    id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            </button>
+            <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
+              <div role="separator" class="divider">Hi <%= current_user.name %></div>
+              <div><%= link_to('Profile', edit_user_registration_path)  %></div>
+              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
+            </div>
+          </div>
       <% else %>
-          <li>
+
             <%= link_to('SIGN IN', '#', 'data-toggle':"modal", class:"signin-btn", 'data-target':"#myModal" ) %>
             <!-- Modal -->
             <div id="myModal" class="modal fade" role="dialog">
@@ -46,7 +54,7 @@
                 </div>
               </div>
             </div>
-          </li>
+
       <% end %>
     </div>
 
@@ -63,13 +71,10 @@
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       </button>
       <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
-        <div><a href="#">All categories</a></div>
-        <div><a href="#">iPhone</a></div>
-        <div><a href="#">SamSung</a></div>
-        <div><a href="#">Sony</a></div>
-        <div><a href="#">Xiaomi</a></div>
-        <div><a href="#">BlackBerry</a></div>
-        <div><a href="#">LG</a></div>
+        <div><%= link_to('All categories', root_path, class:'All categories')  %></div>
+        <% Category.all.each do |category| %>
+            <div><%= link_to( category.brand_name, root_path(id:category.id), class:'')  %></div>
+        <% end %>
       </div>
     </div>
     <!--Chi danh cho giao dien Mobile-->
@@ -79,22 +84,20 @@
       </button>
       <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
         <div class="search_for_mobile visible-xs">
-          <form class="form" method="get" action="/search" id="search">
-            <input class="ss" name="q" type="text" size="40"/>
+          <form method="get" action="<%= phones_path %>" id="search">
+            <input class="ss" name="q" type="text" size="40" placeholder="Search..." value="<%= @keyword %>"/>
           </form>
         </div>
         <div role="separator" class="divider">BROWSE</div>
-        <div><a href="#">All categories</a></div>
-        <div><a href="#">iPhone</a></div>
-        <div><a href="#">SamSung</a></div>
-        <div><a href="#">Sony</a></div>
-        <div><a href="#">Xiaomi</a></div>
-        <div><a href="#">BlackBerry</a></div>
-        <div><a href="#">LG</a></div>
+        <div><%= link_to('All categories', root_path, class:'All categories')  %></div>
+        <% Category.all.each do |category| %>
+            <div><%= link_to( category.brand_name, root_path(id:category.id), class:'')  %></div>
+        <% end %>
+
         <div class="sign-in-sign-out">
           <% if user_signed_in? %>
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
-              <div><%= link_to('Profile', new_user_session_path)  %></div>
+              <div><%= link_to('Profile', edit_user_registration_path)  %></div>
               <div><%= link_to('Past Order', new_user_session_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
           <% else %>
@@ -118,17 +121,15 @@
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">BROWSE
       </button>
       <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
-        <div><a href="#">All categories</a></div>
-        <div><a href="#">iPhone</a></div>
-        <div><a href="#">SamSung</a></div>
-        <div><a href="#">Sony</a></div>
-        <div><a href="#">Xiaomi</a></div>
-        <div><a href="#">BlackBerry</a></div>
-        <div><a href="#">LG</a></div>
+        <div><%= link_to('All categories', root_path, class:'All categories')  %></div>
+        <% Category.all.each do |category| %>
+            <div><%= link_to( category.brand_name, root_path(id:category.id), class:'')  %></div>
+        <% end %>
       </div>
     </span>
   </div>
   <div class="clearfix"></div>
+  <%= yield :category_bar %>
 </div>
 
 <div class="container">

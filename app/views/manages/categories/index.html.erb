@@ -1,0 +1,85 @@
+<div class="manage-index">
+  <div class="tools col-md-12">
+    <div class="col-md-2">
+      <%= link_to new_manages_category_path do %>
+          <button type="button" class="btn btn-success">Add new Brand</button>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <form method="get" action="<%= manages_categories_path %>" id="search">
+        <input class="search-term" name="qcategory" type="text" size="40" placeholder="Search for phone..." value="<%= @keyword %>"/>
+        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button class="reset-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    <div class="search_message col-md-3">
+      <% if @keyword != nil && @keyword != "" %>
+          <% if @count == 0 %>
+              <div class="text">NO MATCHES FOUND!</div>
+          <% else %>
+              <% if @count == 1 %>
+                  <div class="text">Result for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% else %>
+                  <div class="text">Results for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="tables">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th class="colume-name">Brand Name</th>
+        <th class="colume-name">Date Created</th>
+        <th class="colume-name">Date Modifed</th>
+        <th class="colume-name">Visible</th>
+        <th colspan="1" class="colume-name">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @categories.each do |category| %>
+          <tr>
+            <td class="colume-value"><%= category.brand_name %></td>
+            <td><%= category.created_at %></td>
+            <td><%= category.updated_at %></td>
+            <% if category.flag==true %>
+                <td class="colume-checkbox"><input type="checkbox" checked onclick="return false;" readonly="readonly">
+                </td>
+            <% else %>
+                <td class="colume-checkbox">
+                  <input type="checkbox" unchecked onclick="return false;" readonly="readonly"></td>
+            <% end %>
+            <td class="colume-action"><%= link_to edit_manages_category_path(category) do %>
+                  <button type="button" class="btn btn-success">Update</button>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @categories, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @categories, :window => 2, theme: 'normal' %>
+  </div>
+  <script>
+    $(function() {
+      $('.reset-btn').click(function() {
+        debugger;
+        var term = $(this).siblings('.search-term');
+        term.val('');
+      })
+    })
+  </script>
+</div>

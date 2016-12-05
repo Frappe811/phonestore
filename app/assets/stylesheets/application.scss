@@ -9,7 +9,9 @@
 @import "phonedetails";
 @import "flashmessage";
 @import "carts";
-
+@import "container";
+@import "manages";
+@import "admins/*";
 .container {
   overflow-x: hidden;
 }

@@ -1,4 +1,7 @@
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
+  devise_for :admins ,controllers: {
+      sessions: 'admins/sessions'
+  }
   devise_for :users, controllers: {
       omniauth_callbacks: "users/omniauth_callbacks",
       sessions: 'users/sessions',
@@ -14,5 +17,9 @@
   resource :carts do
     get ':phone_id', to: 'carts#add', as: :add_to
     get 'remove/:phone_id', to: 'carts#remove', as: :remove_from
+  end
+  namespace :manages do
+    resources :phones, except: [:destroy]
+    resources :categories, except: [:destroy]
   end
 end

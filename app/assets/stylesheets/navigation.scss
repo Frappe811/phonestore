@@ -45,7 +45,7 @@
       background-position: 5px 4px;
       border: 0 none;
       font: bold 12px Arial, Helvetica, Sans-serif;
-      color: #777;
+      color: black;
       width: 250px;
       padding: 6px 15px 6px 45px;
       -webkit-border-radius: 20px;
@@ -93,8 +93,13 @@
     .signin-signout {
       color: white;
 
-      li {
-        display: block;
+      .dropdown {
+        .fa-user-o {
+          background-color: #82B64A;
+          height: 62px;
+          border: 0px solid #82B64A;
+          font-size: 24px;
+        }
       }
 
       .signin-btn {
@@ -141,19 +146,19 @@
         }
 
         .search_for_mobile {
+          margin-bottom: 5px;
+
           input[type="text"] {
+            padding-left: 10px;
             background: url("search-dark.png") no-repeat white;
             background-size: 30px 30px;
             background-position: 120px 4px;
+            color: black;
           }
-          .form {
-            margin-bottom: 5px;
-
-            .ss {
-              width: 158px;
-              margin-right: 5px;
-              margin-left: 5px;
-            }
+          .ss {
+            width: 158px;
+            margin-right: 5px;
+            margin-left: 5px;
           }
         }
 
@@ -170,7 +175,6 @@
 
       .browse {
         padding: 0px;
-        vertical-align: top;
         font-size: 18px;
         background-color: #82B64A;
         border: 0px solid #82B64A;
@@ -178,5 +182,49 @@
       }
     }
   }
+
+  .category_bar {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+    line-height: 47px;
+    background-color: #95d456;
+    width: 100%;
+
+    .categories {
+      margin-left: 15px;
+    }
+
+    .search_message {
+      height: 70px;
+      background-color: white;
+      font-weight: bold;
+      font-size: 18px;
+      position: relative;
+      color: black;
+
+      .text {
+        height: 40px;
+        padding-top: 10px;
+        margin-left: 20px;
+
+        .keyword {
+          color: red;
+        }
+
+        .count {
+          color: grey;
+        }
+      }
+
+      .text2 {
+        line-height: 30px;
+        font-size: 12px;
+        color: darkgrey;
+        margin-left: 20px;
+      }
+    }
+  }
+
 }
 

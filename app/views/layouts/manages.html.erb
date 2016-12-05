@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phones Store Management</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body>
+<div class="navigation">
+  <div class="left">
+    <%= link_to manages_phones_path, class:"homeclick" do %>
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        <span class="name">Phone Store Management</span>
+    <% end %>
+    <!--Thanh Search khong hien thi tren Mobile-->
+  </div>
+  <div class="right">
+    <!--Chi danh cho giao dien Ipad-->
+    <!--Chi danh cho giao dien Mobile-->
+    <!--Chi danh cho giao dien Destop(Large)-->
+    <% if admin_signed_in? %>
+        <span class="manage-navigtion"><%= link_to destroy_admin_session_path, :method => :delete do %>
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <%end  %>
+        </span>
+    <%end  %>
+    <span class="manage-navigtion"><%= link_to 'Manage Brand', manages_categories_path %></span>
+    <span class="manage-navigtion"><%= link_to 'Manage Phones', manages_phones_path %></span>
+  </div>
+  <div class="clearfix"></div>
+  <%= yield :category_bar %>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+<div class="bottom-manges">
+</div>
+</body>
+</html>
+

@@ -1,43 +1,81 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% x = nil %>
+<div class="profile_page">
+  <h2>Your Profile</h2>
+  <div class="profile_container">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+        <% x = resource.errors.to_hash.keys %>
+        <!--Name-->
+        <div class="form-group">
+          <span class="title">Name</span>
+          <i class="icon fa fa-pencil-square-o btn-name"></i>
+          <div>
+            <span class="input-label"><%= @user.name %></span>
+            <span class="input hidden" >
+              <%= f.text_field :name, class: 'form-control'%>
+            </span>
+          </div>
+        </div>
+        <!--Email-->
+        <div class="form-group">
+          <span class="title">Email</span>
+          <i class="icon fa fa-pencil-square-o btn-email"></i>
+          <div>
+            <span class="input-label"><%= @user.email %></span>
+            <span class="input hidden" >
+              <%= f.email_field :email, class: 'form-control'%>
+            </span>
+          </div>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <!--Current Password-->
+        <div class="form-group">
+          <span class="title">Password</span>
+          <i class="icon fa fa-pencil-square-o btn-current_password btn-password btn-password_confirmation"></i>
+          <%= f.password_field :current_password, autocomplete: "off", value: nil, class: 'form-control' %></br>
+        <!--New Password-->
+          <div class="input hidden">
+            <%= f.label :password, "New Password" %>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %></br>
+            <% if @minimum_password_length %>
+                <!--<em><%= @minimum_password_length %> characters minimum</em><br />-->
+            <% end %>
+            <!--Password_confirmation-->
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
+        <!--Cancel&Save-->
+        <div class="button">
+          <span class="actions">
+          <%= link_to("CANCEL", root_path ,class:'btn') %>
+          </span>
+          <span class="actions">
+          <%= f.submit "SAVE", class:'btn'%>
+          </span>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+        </div>
     <% end %>
   </div>
+  <script>
+    var errors = <%= raw x.map { |key| key.to_s } %>;
+    $('.icon').click(function() {
+      var parent = $(this).parent('.form-group');
+      var username = parent.find('.input-label');
+      var input = parent.find('.input');
+      username.toggleClass('hidden');
+      input.toggleClass('hidden');
+    })
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    $.each(errors, function(x, error) {
+      var button = $('.icon.btn-'+error);
+      if(!button.hasClass('clicked')){
+        button.click();
+        button.addClass('clicked');
+      }
+    })
+  </script>
+</div>
