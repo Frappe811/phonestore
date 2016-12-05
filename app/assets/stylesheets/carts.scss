@@ -7,17 +7,18 @@
 
 
      .badge {
-       padding: 20px;
-       font-size: 15px;
-       background-color: #a60000;
 
+       font-size: 15px;
+       background-color: #a6a5a5;
+       color: black;
      }
 
     }
     .badge {
-      padding: 20px;
+
       font-size: 15px;
-      background-color: #a60000;
+      background-color: #a6a5a5;
+      color: black
     }
 
     .list_cart_line {
@@ -28,23 +29,23 @@
         margin-bottom: 15px;
         border: 1px solid rgba(210, 205, 208, 0.58);
         border-radius: 4px;
-        line-height: 200px;
-        padding : 10px;
+
+
 
 
         .phone-price {
           font-size: 17px;
           font-weight: bold;
           color: red;
-          margin-left: 10px;
-          padding-bottom: 10px;
+
         }
 
         a {
 
           i {
-            font-size: 30px;
-            line-height: 200px
+            font-size: 20px;
+            color: #82B64A;
+
           }
         }
 

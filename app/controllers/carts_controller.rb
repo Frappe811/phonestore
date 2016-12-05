@@ -10,7 +10,7 @@ class CartsController < ApplicationController
    end
 
    cart.add(phone)
-   redirect_to root_path
+   redirect_to :back
   end
 
   def remove
@@ -21,7 +21,7 @@ class CartsController < ApplicationController
       cart.remove(phone)
 
     end
-    redirect_to root_path
+    redirect_to carts_path
 
   end
   def show
