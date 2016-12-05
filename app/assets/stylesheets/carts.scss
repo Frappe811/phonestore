@@ -1,59 +1,65 @@
-.container{
+.carts-show {
+  padding-left: 0;
+  padding-right: 0;
 
-  .carts-show {
+  .total {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
 
-    .sum-of-phone {
-      margin-bottom: 10px;
-
-
-     .badge {
-
-       font-size: 15px;
-       background-color: #a6a5a5;
-       color: black;
-     }
-
-    }
     .badge {
-
       font-size: 15px;
       background-color: #a6a5a5;
-      color: black
+      color: black;
     }
-
-    .list_cart_line {
-      margin-top: 10px;
+  }
 
 
-      .show-container {
-        margin-bottom: 15px;
-        border: 1px solid rgba(210, 205, 208, 0.58);
-        border-radius: 4px;
+  .list_cart_line {
 
+    padding-left: 0;
+    padding-right: 0;
+    .empty-cart {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 100px;
+    }
+    .show-container {
+      margin-bottom: 5px;
 
+      .phone-img {
+        width: 100%;
+        object-fit: cover;
 
-
-        .phone-price {
-          font-size: 17px;
-          font-weight: bold;
-          color: red;
-
+        @media (min-width: 768px) {
+          min-width: 257.5px;
+          min-height: 257.5px;
+          max-height: 257.5px;
         }
+
+        @media (min-width: 992px) {
+          min-width: 257.5px;
+          min-height: 257.5px;
+          max-height: 257.5px;
+        }
+      }
+
+      .phone-name {
+
+        font-weight: bold;
 
         a {
-
-          i {
-            font-size: 20px;
-            color: #82B64A;
-
-          }
+          text-decoration: none;
+          color: #0c1525;
         }
+      }
 
-        .phone-name {
-          font-weight: bold;
-          font-size: 15px;
-        }
+      .phone-price {
+        font-weight: bold;
+      }
 
+      .add-remove {
       }
     }
   }
