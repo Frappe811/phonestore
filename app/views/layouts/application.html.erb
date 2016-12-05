@@ -61,7 +61,11 @@
     <a href="/carts">
       <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true">
       <span class="badge">
-        <%= Cart.find_by(id:session[:cart_id]).num_of_phone  %>
+         <% if Cart.find_by(id: session[:cart_id]).nil? %>
+            0
+        <% else %>
+        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>items in your cart
+            <%end  %>
       </span>
       </i>
     </a>
@@ -98,7 +102,7 @@
           <% if user_signed_in? %>
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
               <div><%= link_to('Profile', edit_user_registration_path)  %></div>
-              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Order history', orders_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
           <% else %>
               <div role="separator" class="divider">GUEST</div>
@@ -111,7 +115,11 @@
     <a href="/carts">
       <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true">
       <span class="badge">
-        <%= Cart.find_by(id:session[:cart_id]).num_of_phone  %>
+        <% if Cart.find_by(id: session[:cart_id]).nil? %>
+        0
+        <% else %>
+        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>
+        <%end  %>
       </span>
       </i>
     </a>

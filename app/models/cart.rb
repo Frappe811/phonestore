@@ -21,8 +21,10 @@ class Cart < ActiveRecord::Base
   def num_of_phone
 
     result = 0
-    cart_lines.each do |cart_line|
-      result = result + cart_line.quantity
+    if cart_lines.count > 0
+      cart_lines.each do |cart_line|
+        result = result + cart_line.quantity
+      end
     end
     return result
   end
@@ -42,9 +44,12 @@ class Cart < ActiveRecord::Base
   end
   def total_price
     total = 0
-    cart_lines.each do |cart_line|
-      total_price = cart_line.quantity * cart_line.phone.price
-      total = total + total_price
+    #
+    if cart_lines.count > 0
+      cart_lines.each do |cart_line|
+        total_price = cart_line.quantity * cart_line.phone.price
+        total = total + total_price
+      end
     end
     return total
 

@@ -43,16 +43,12 @@
             </div>
             <div class="phone-price"><%= number_to_currency phone.price, precision: 0 %></div>
             <div class="phone-cart">
-              <a href="<%= add_to_carts_path(phone_id: phone.id) %>">
-                  <i class="fa fa-shopping-cart" aria-hidden="true">
-                  </i>
-              </a>
-
-              <span class="buy">MUA NGAY</span>
-
+              <%= link_to add_to_carts_path(phone.id), remote:true do %>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <% end %>
+              <span class="buy">BUY NOW</span>
             </div>
           </div>
-
         </div>
     <% end %>
   </div>
