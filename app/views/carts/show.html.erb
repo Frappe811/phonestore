@@ -1,0 +1,36 @@
+<div class ="carts-show">
+  <div class = "sum-of-phone col-xs-8">
+
+    <span class="badge"><%= Cart.find_by(id:session[:cart_id]).num_of_phone %>
+      items in your cart</span>
+  </div>
+  <span class="badge col-xs-4">
+  <%= @cart.total_price %>$</span>
+  <div class = "list_cart_line">
+    <% @cart.cart_lines.each do |cart_line| %>
+
+        <div class="show-container col-xs-12 ">
+
+          <div class="phone_img col-xs-4">
+            <%= link_to phone_path(cart_line) do %>
+                <img class="phone-img" src="<%= cart_line.phone.photo_url %>">
+            <% end %>
+          </div>
+          <div class="phone-name col-xs-2" data-toggle="tooltip" title="<%= cart_line.phone.name %>">
+            <%= link_to cart_line.phone.name, phone_path(cart_line) %>
+          </div>
+          <div class="phone-price col-xs-2"><%= number_to_currency cart_line.phone.price, precision: 0 %>
+          </div>
+            <a href="<%= add_to_carts_path(phone_id: cart_line.phone.id) %>">
+              <i class="fa fa-plus col-xs-1" aria-hidden="true"></i>
+            </a>
+
+            <a href="<%= remove_from_carts_path(cart_line.phone.id) %>">
+              <i class="fa fa-trash col-xs-1" aria-hidden="true"></i>
+            </a>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
