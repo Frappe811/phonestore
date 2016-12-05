@@ -1,21 +1,21 @@
 class CartsController < ApplicationController
 
   def add
-   phone = Phone.find(params[:phone_id])
-   cart = Cart.find_by(id:session[:cart_id])
+    phone = Phone.find(params[:phone_id])
+    cart = Cart.find_by(id: session[:cart_id])
 
-   if cart.nil?
-     cart = Cart.create
-     session[:cart_id] = cart.id
-   end
+    if cart.nil?
+      cart = Cart.create
+      session[:cart_id] = cart.id
+    end
 
-   cart.add(phone)
-   redirect_to root_path
+    cart.add(phone)
+    redirect_to root_path
   end
 
   def remove
     phone = Phone.find(params[:phone_id])
-    cart = Cart.find_by(id:session[:cart_id])
+    cart = Cart.find_by(id: session[:cart_id])
 
     if cart != nil
       cart.remove(phone)
@@ -24,12 +24,20 @@ class CartsController < ApplicationController
     redirect_to root_path
 
   end
+
   def show
 
-    @cart = Cart.find(session[:cart_id])
-    if @cart.present?
+      @cart = current_cart
+      if @cart.present?
 
-    end
-
+      end
   end
+
+  private
+    def current_cart
+      @cart = Cart.where(id: session[:cart_id]).first
+      @cart = Cart.create if @cart.nil?
+      session[:cart_id] = @cart.id
+      @cart
+    end
 end

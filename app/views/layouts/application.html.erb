@@ -61,7 +61,11 @@
     <a href="/carts">
       <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true">
       <span class="badge">
-        <%= Cart.find_by(id:session[:cart_id]).num_of_phone  %>
+         <% if Cart.find_by(id: session[:cart_id]).nil? %>
+            0
+        <% else %>
+        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>items in your cart
+            <%end  %>
       </span>
       </i>
     </a>
@@ -111,7 +115,11 @@
     <a href="/carts">
       <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true">
       <span class="badge">
-        <%= Cart.find_by(id:session[:cart_id]).num_of_phone  %>
+        <% if Cart.find_by(id: session[:cart_id]).nil? %>
+        0
+        <% else %>
+        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>
+            <%end  %>
       </span>
       </i>
     </a>
