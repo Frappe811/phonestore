@@ -39,14 +39,13 @@
             </div>
           </div>
       <% end %>
+      <div class="checkout col-xs-12">
+        <%= link_to orders_path, method: :post do %>
+            <button type="button" class="btn btn-success">Checkout</button>
+        <% end %>
+      </div>
   <% end %>
 </div>
-<div class="back-to-shopping col-xs-12">
-  <%= link_to orders_path, method: :post do %>
-      <button type="button" class="btn btn-success">Checkout</button>
-  <% end %>
-</div>
-
 <div class="back-to-shopping col-xs-12">
   <%= link_to root_path do %>
       <button type="button" class="btn btn-success">Back To Shopping</button>
