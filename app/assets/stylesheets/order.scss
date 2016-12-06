@@ -177,3 +177,92 @@
     }
   }
 }
+.order-new {
+  padding-left: 0;
+  padding-right: 0;
+
+  .your-order {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid darkgray;
+    font-size: large;
+  }
+  .total {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 25px;
+    text-align: right;
+
+    .badge {
+      font-size: 15px;
+      background-color: #a6a5a5;
+      color: black;
+    }
+  }
+
+
+  .list_cart_line {
+
+    .checkout {
+      text-align: center;
+      margin-top: 25px;
+      .btn {
+
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        background-color: #82b64a;
+        padding: 2px 8px 2px 8px;
+      }
+    }
+
+    padding-left: 0;
+    padding-right: 0;
+    .empty-cart {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 100px;
+    }
+    .show-container {
+      border-bottom: 1px solid darkgray;
+      margin-bottom: 5px;
+
+      .phone-img {
+        width: 100%;
+        max-height: 66px;
+        object-fit: cover;
+
+        @media (min-width: 768px) {
+          min-width: 257.5px;
+          min-height: 257.5px;
+          max-height: 257.5px;
+        }
+
+        @media (min-width: 992px) {
+          min-width: 257.5px;
+          min-height: 257.5px;
+          max-height: 257.5px;
+        }
+      }
+
+      .phone-name {
+
+        font-weight: bold;
+        padding-left: 0;
+        padding-right: 0;
+        a {
+          text-decoration: none;
+          color: #0c1525;
+        }
+      }
+
+      .phone-price {
+        font-weight: bold;
+      }
+      .sub-total {
+        font-weight: bold;
+      }
+      .add-remove {
+      }
+    }
+  }
+}
