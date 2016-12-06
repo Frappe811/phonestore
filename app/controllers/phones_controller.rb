@@ -1,6 +1,9 @@
 class PhonesController < ApplicationController
   def index
-
+    @cart = Cart.where(id: session[:cart_id]).first
+    @cart = Cart.create if @cart.nil?
+    session[:cart_id] = @cart.id
+    @cart
     category = Category.find_by_id(params[:id])
     keyword = params[:q]
     @category = category

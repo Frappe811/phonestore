@@ -36,7 +36,7 @@
             <div class="dropdown-menu pull-left" aria-labelledby="dropdownMenu1">
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
               <div><%= link_to('Profile', edit_user_registration_path)  %></div>
-              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Order history', orders_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
             </div>
           </div>
@@ -57,18 +57,14 @@
 
       <% end %>
     </div>
-
-    <a href="/carts">
+    <%= link_to carts_path, method: :get do %>
       <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true">
-      <span class="badge">
-         <% if Cart.find_by(id: session[:cart_id]).nil? %>
-            0
+        <% if Cart.find_by(id: session[:cart_id]).nil? %>
         <% else %>
-        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>items in your cart
-            <%end  %>
-      </span>
+            <span class="badge"><%= Cart.find_by(id: session[:cart_id]).num_of_phone %></span>
+        <%end  %>
       </i>
-    </a>
+    <% end %>
 
     <div class="dropdown">
       <button class="fa fa-bars visible-sm dropdown-toggle" type="button"
@@ -112,17 +108,14 @@
         </div>
       </div>
     </div>
-    <a href="/carts">
+    <%= link_to carts_path, method: :get do %>
       <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true">
-      <span class="badge">
         <% if Cart.find_by(id: session[:cart_id]).nil? %>
-        0
         <% else %>
-        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>
+            <span class="badge"><%= Cart.find_by(id: session[:cart_id]).num_of_phone %></span>
         <%end  %>
-      </span>
       </i>
-    </a>
+    <% end %>
     <!--Chi danh cho giao dien Destop(Large)-->
     <span class="dropdown">
       <button class="browse hidden-xs hidden-sm" type="button"
