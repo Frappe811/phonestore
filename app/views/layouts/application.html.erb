@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  <link rel="manifest" href="assets/manifest.json">
 </head>
 <body>
 <div class="navigation">
@@ -57,7 +57,19 @@
 
       <% end %>
     </div>
-    <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true"></i>
+
+    <a href="/carts">
+      <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true">
+      <span class="badge">
+         <% if Cart.find_by(id: session[:cart_id]).nil? %>
+            0
+        <% else %>
+        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>items in your cart
+            <%end  %>
+      </span>
+      </i>
+    </a>
+
     <div class="dropdown">
       <button class="fa fa-bars visible-sm dropdown-toggle" type="button"
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -90,7 +102,7 @@
           <% if user_signed_in? %>
               <div role="separator" class="divider">Hi <%= current_user.name %></div>
               <div><%= link_to('Profile', edit_user_registration_path)  %></div>
-              <div><%= link_to('Past Order', new_user_session_path)  %></div>
+              <div><%= link_to('Order history', orders_path)  %></div>
               <div><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></div>
           <% else %>
               <div role="separator" class="divider">GUEST</div>
@@ -100,7 +112,17 @@
         </div>
       </div>
     </div>
-    <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true"></i>
+    <a href="/carts">
+      <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true">
+      <span class="badge">
+        <% if Cart.find_by(id: session[:cart_id]).nil? %>
+        0
+        <% else %>
+        <%= Cart.find_by(id: session[:cart_id]).num_of_phone %>
+        <%end  %>
+      </span>
+      </i>
+    </a>
     <!--Chi danh cho giao dien Destop(Large)-->
     <span class="dropdown">
       <button class="browse hidden-xs hidden-sm" type="button"

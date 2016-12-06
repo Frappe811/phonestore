@@ -8,9 +8,11 @@
 @import "bottom";
 @import "phonedetails";
 @import "flashmessage";
+@import "carts";
 @import "container";
 @import "manages";
 @import "admins/*";
+@import "order";
 .container {
   overflow-x: hidden;
 }

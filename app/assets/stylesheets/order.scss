@@ -1,0 +1,113 @@
+.order-name {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #95d456;
+  border-bottom: 1px solid darkgray;
+}
+
+.order-history {
+  margin-bottom: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  .list-order {
+
+    .order-columes {
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom: 1px solid darkgray;
+      margin-bottom: 5px;
+    }
+
+    .order-columes-field {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .order-number {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .order-date {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .order-total {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .order-status {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .empty-order {
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
+.back-to-shopping {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+  .btn {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #82b64a;
+    padding: 2px 8px 2px 8px;
+    width: 130px;
+  }
+}
+.pagination-container {
+  margin-right: 10px;
+  font-weight: bold;
+
+  .pagination-large {
+    line-height: 60px;
+
+    a {
+      color: #82B64A;
+      margin-right: 6px;
+    }
+
+    .page.current {
+      margin-right: 6px;
+    }
+  }
+
+  .pagination-normal {
+    .page {
+      margin-right: 15px;
+
+      a {
+        color: #82B64A;
+        text-decoration: none;
+      }
+    }
+
+    .buttons {
+      margin-top: 15px;
+      margin-bottom: 15px;
+
+      .first, .prev, .next, .last {
+        margin-right: 5px;
+        border: 1px solid darkgray;
+        border-radius: 5px;
+        background-color: #82B64A;
+        padding: 5px;
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

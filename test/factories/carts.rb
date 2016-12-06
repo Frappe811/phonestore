@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :cart do
+  factory :carts do
     user nil
   end
 end

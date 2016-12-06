@@ -1,0 +1,44 @@
+<div>
+  <div class="order-name">Your Order History</div>
+  <div class="order-history col-xs-12">
+    <% if @carts.any? %>
+        <div class="list-order">
+          <div class="order-columes col-xs-12">
+            <div class="order-number col-xs-3">Order #</div>
+            <div class="order-date col-xs-4">Date</div>
+            <div class="order-total col-xs-2">Total</div>
+            <div class="order-status col-xs-3">Status</div>
+          </div>
+          <% @carts.each do |cart| %>
+              <div class="order-columes-field col-xs-12">
+                <div class="order-number col-xs-3"><%= cart.id %></div>
+                <div class="order-date col-xs-4"><%= cart.created_at.strftime("%d/%m/%Y") %></div>
+                <div class="order-total col-xs-2"><%= number_to_currency(cart.total_price, delimiter: "", format: "%n %u")%></div>
+                <div class="order-status col-xs-3">
+                  <% if cart.status ==true %> Completed
+                      <% else %> Incomplete
+                  <% end %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% else %>
+        <div class="empty-order col-xs-12">
+          <span>Your order is currently empty </span>
+        </div>
+    <% end %>
+  </div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @carts, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @carts, :window => 2, theme: 'normal' %>
+  </div>
+  <div class="back-to-shopping col-xs-12">
+    <%= link_to root_path do %>
+        <button type="button" class="btn btn-success">Back To Shopping</button>
+    <% end %>
+  </div>
+</div>
