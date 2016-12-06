@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-5">
       <form method="get" action="<%= manages_categories_path %>" id="search">
-        <input class="search-term" name="qcategory" type="text" size="40" placeholder="Search for phone..." value="<%= @keyword %>"/>
+        <input class="search-term" name="qcategory" type="text" size="40" placeholder="Search for brand..." value="<%= @keyword %>"/>
         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         <button class="reset-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
       </form>
@@ -47,8 +47,8 @@
       <% @categories.each do |category| %>
           <tr>
             <td class="colume-value"><%= category.brand_name %></td>
-            <td><%= category.created_at %></td>
-            <td><%= category.updated_at %></td>
+            <td class="colume-text-center"><%= category.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+            <td class="colume-text-center"><%= category.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
             <% if category.flag==true %>
                 <td class="colume-checkbox"><input type="checkbox" checked onclick="return false;" readonly="readonly">
                 </td>

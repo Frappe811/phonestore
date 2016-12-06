@@ -1,0 +1,87 @@
+<div class="manage-index">
+  <div class="tools col-md-12">
+    <div class="col-md-5">
+      <form method="get" action="<%= manages_orders_path %>" id="search">
+        <input class="search-term" name="qorder" type="text" size="40" placeholder="Search for order..." value="<%= @keyword %>"/>
+        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button class="reset-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    <div class="search_message col-md-3">
+      <% if @keyword != nil && @keyword != "" %>
+          <% if @count == 0 %>
+              <div class="text">NO MATCHES FOUND!</div>
+          <% else %>
+              <% if @count == 1 %>
+                  <div class="text">Result for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% else %>
+                  <div class="text">Results for
+                    <span class="keyword">"<%= @keyword %>"</span>
+                    <span class="count">(<%= @count %>)</span>
+                  </div>
+              <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="tables">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th class="colume-name">Order #</th>
+        <th class="colume-name">Name</th>
+        <th class="colume-name">Date</th>
+        <th class="colume-name">Total</th>
+        <th class="colume-name">Status</th>
+        <th colspan="1" class="colume-name">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @carts.each do |cart| %>
+          <tr>
+            <td><%= cart.id %></td>
+            <td class="colume-value">
+              <% if cart.user.nil? %>
+                  #####
+              <% else %>
+                  <%= cart.user.name %></td>
+              <% end %>
+              <td class="colume-text-center"><%= cart.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+              <td class="colume-text-center"><%= cart.total_price %></td>
+              <td class="colume-text-center">
+                <% if cart.status==true %>
+                    Completed
+                <% else %>
+                    Incomplete
+                <% end %>
+              </td>
+              <td class="colume-action">
+                <button type="button" class="btn btn-success">Details</button>
+              </td>
+              </td>
+              </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @carts, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @carts, :window => 2, theme: 'normal' %>
+  </div>
+  <script>
+    $(function () {
+      $('.reset-btn').click(function () {
+        debugger;
+        var term = $(this).siblings('.search-term');
+        term.val('');
+      })
+    })
+  </script>
+</div>
