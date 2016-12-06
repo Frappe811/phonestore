@@ -11,7 +11,7 @@
   <% if Cart.find_by(id: session[:cart_id]).num_of_phone==0 %>
       <div class="empty-cart col-xs-12">Your cart is currently empty</div>
   <% else %>
-      <% @cart.cart_lines.each do |cart_line| %>
+      <% @cart.cart_lines.order('id').each do |cart_line| %>
           <div class="show-container col-xs-12 col-sm-12 col-md-12">
             <div class="phone_img col-xs-4 col-sm-6 col-md-4">
               <%= link_to phone_path(cart_line) do %>
