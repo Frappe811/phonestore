@@ -60,6 +60,7 @@
     <%= link_to carts_path, method: :get do %>
       <i class="fa fa-shopping-cart hidden-xs hidden-lg" aria-hidden="true">
         <% if Cart.find_by(id: session[:cart_id]).nil? %>
+            <span class="badge">0</span>
         <% else %>
             <span class="badge"><%= Cart.find_by(id: session[:cart_id]).num_of_phone %></span>
         <%end  %>
@@ -111,6 +112,7 @@
     <%= link_to carts_path, method: :get do %>
       <i class="fa fa-shopping-cart hidden-sm hidden-md" aria-hidden="true">
         <% if Cart.find_by(id: session[:cart_id]).nil? %>
+            <span class="badge">0</span>
         <% else %>
             <span class="badge"><%= Cart.find_by(id: session[:cart_id]).num_of_phone %></span>
         <%end  %>
