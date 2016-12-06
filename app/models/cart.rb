@@ -4,7 +4,7 @@ class Cart < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_by_order, :associated_against => {:user => [:name]}, :against => :id,
                   :using => {:tsearch => {:prefix => true}}
-  
+
   def add(phone)
 
     if cart_lines.count == 0

@@ -43,18 +43,26 @@
       <% @carts.each do |cart| %>
           <tr>
             <td><%= cart.id %></td>
-            <td class="colume-value"><%= cart.user.name %></td>
-            <td class="colume-text-center"><%= cart.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z")%></td>
-            <td class="colume-text-center">900</td>
-            <td class="colume-text-center"><% if cart.status==true %>
-                Completed
+            <td class="colume-value">
+              <% if cart.user.nil? %>
+                  #####
               <% else %>
-                Incomplete
+                  <%= cart.user.name %></td>
               <% end %>
-            </td>
-            <td class="colume-action"><button type="button" class="btn btn-success">Details</button></td>
-            </td>
-          </tr>
+              <td class="colume-text-center"><%= cart.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+              <td class="colume-text-center"><%= cart.total_price %></td>
+              <td class="colume-text-center">
+                <% if cart.status==true %>
+                    Completed
+                <% else %>
+                    Incomplete
+                <% end %>
+              </td>
+              <td class="colume-action">
+                <button type="button" class="btn btn-success">Details</button>
+              </td>
+              </td>
+              </tr>
       <% end %>
       </tbody>
     </table>
@@ -68,8 +76,8 @@
     <%= paginate @carts, :window => 2, theme: 'normal' %>
   </div>
   <script>
-    $(function() {
-      $('.reset-btn').click(function() {
+    $(function () {
+      $('.reset-btn').click(function () {
         debugger;
         var term = $(this).siblings('.search-term');
         term.val('');
