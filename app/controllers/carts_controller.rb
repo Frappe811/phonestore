@@ -7,7 +7,7 @@ class CartsController < ApplicationController
     @cart.add(phone)
 
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to carts_path }
       format.js { render :add }
     end
 
