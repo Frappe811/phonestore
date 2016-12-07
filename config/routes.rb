@@ -24,4 +24,9 @@ Rails.application.routes.draw do
     resources :categories, except: [:destroy]
     resources :orders
   end
+  namespace :api do
+    namespace :v1 do
+      resources :carts, only: [:show]
+    end
+  end
 end
