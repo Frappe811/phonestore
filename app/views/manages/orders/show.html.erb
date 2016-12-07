@@ -1,0 +1,39 @@
+<div class="order-details-index">
+  <div class="order-detail-name">Order #<%= @cart.id %> Details</div>
+  <% if @cart.cart_lines==0 %>
+      <div>This cart has no item</div>
+  <% else %>
+      <div class="tables">
+        <table class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th class="colume-name">#</th>
+            <th class="colume-name">Name</th>
+            <th class="colume-name">Added Date</th>
+            <th class="colume-name">Price</th>
+            <th class="colume-name">Quantity</th>
+            <th class="colume-name">Sub Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @cart.cart_lines.each do |cart_line| %>
+              <tr>
+                <td>#</td>
+                <td><%= cart_line.phone.name %></td>
+                <td><%= cart_line.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+                <td><%= cart_line.price %></td>
+                <td><%= cart_line.quantity %></td>
+                <td><%= cart_line.price * cart_line.quantity %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+  <% end %>
+  <div class="order-details-total">Total :<%= @cart.total_price %></div>
+  <div class="order-details-back">
+      <%= link_to manages_orders_path do %>
+          <button type="button" class="btn btn-success">Manage Order</button>
+      <%end %>
+  </div>
+</div>

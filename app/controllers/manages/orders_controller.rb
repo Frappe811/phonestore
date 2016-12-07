@@ -13,5 +13,8 @@ module Manages
         end
       end
     end
+    def show
+      @cart = Cart.find(params[:id])
+    end
   end
 end

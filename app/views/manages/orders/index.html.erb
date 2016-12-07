@@ -1,6 +1,6 @@
 <div class="manage-index">
   <div class="tools col-md-12">
-    <div class="col-md-5">
+    <div class="col-md-12">
       <form method="get" action="<%= manages_orders_path %>" id="search">
         <input class="search-term" name="qorder" type="text" size="40" placeholder="Search for order..." value="<%= @keyword %>"/>
         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -33,7 +33,7 @@
       <tr>
         <th class="colume-name">Order #</th>
         <th class="colume-name">Name</th>
-        <th class="colume-name">Date</th>
+        <th class="colume-name">Added Date</th>
         <th class="colume-name">Total</th>
         <th class="colume-name">Status</th>
         <th colspan="1" class="colume-name">Action</th>
@@ -59,7 +59,9 @@
                 <% end %>
               </td>
               <td class="colume-action">
+                <%= link_to manages_order_path(cart.id), method: :get do %>
                 <button type="button" class="btn btn-success">Details</button>
+                <%end %>
               </td>
               </td>
               </tr>
@@ -78,7 +80,6 @@
   <script>
     $(function () {
       $('.reset-btn').click(function () {
-        debugger;
         var term = $(this).siblings('.search-term');
         term.val('');
       })

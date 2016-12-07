@@ -266,3 +266,28 @@
     }
   }
 }
+.order-details-index {
+
+  .order-detail-name {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .order-details-total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .order-details-back {
+    .btn {
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      background-color: #82b64a;
+      padding: 2px 8px 2px 8px;
+      width: 130px;
+    }
+  }
+}
