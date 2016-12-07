@@ -1,0 +1,43 @@
+<div class="user-index">
+  <div class="tools col-md-12"></div>
+   <div class="tables">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th class="colume-name">ID</th>
+        <th class="colume-name">User Name</th>
+        <th class="colume-name">User Email</th>
+        <th class="colume-name">Date Created</th>
+        <th class="colume-name">Date Modifed</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td class="colume-value"><%= user.id %></td>
+            <td class="colume-text-center"><%= user.name %></td>
+            <td class="colume-text-center"><%= user.email %></td>
+            <td class="colume-text-center"><%= user.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+            <td class="colume-text-center"><%= user.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
+            <td class="colume-action"><%= link_to manages_user_path(user) do %>
+                  <button type="button" class="btn btn-success">Show</button>
+              <% end %>
+            </td>
+            <td class="colume-action"><%= link_to edit_manages_user_path(user) do %>
+                  <button type="button" class="btn btn-success">Update</button>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container hidden-xs pull-right">
+    <nav>
+      <%= paginate @users, :window => 2, theme: 'large' %>
+    </nav>
+  </div>
+  <div class="pagination-container visible-xs text-center">
+    <%= paginate @users, :window => 2, theme: 'normal' %>
+  </div>
+</div>
