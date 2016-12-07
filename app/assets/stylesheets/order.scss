@@ -65,6 +65,7 @@
     width: 130px;
   }
 }
+
 .pagination-container {
   margin-right: 10px;
   font-weight: bold;
@@ -111,6 +112,7 @@
     }
   }
 }
+
 .carts-show {
   padding-left: 0;
   padding-right: 0;
@@ -127,7 +129,6 @@
       color: black;
     }
   }
-
 
   .list_cart_line {
 
@@ -177,6 +178,7 @@
     }
   }
 }
+
 .order-new {
   padding-left: 0;
   padding-right: 0;
@@ -199,7 +201,6 @@
       color: black;
     }
   }
-
 
   .list_cart_line {
 
@@ -265,4 +266,44 @@
       }
     }
   }
+}
+
+.order-details-index {
+
+  .order-details {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    .order-detail-name {
+      margin-top: 25px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+
+  .phone_name {
+    a {
+      color: #0c1525;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+  }
+
+  .order-details-total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .order-details-back {
+    .btn {
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      background-color: #82b64a;
+      padding: 2px 8px 2px 8px;
+      width: 130px;
+    }
+  }
+
 }
