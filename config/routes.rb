@@ -22,6 +22,13 @@ Rails.application.routes.draw do
   namespace :manages do
     resources :phones, except: [:destroy]
     resources :categories, except: [:destroy]
+    resources :orders
+  end
+  namespace :api do
+    namespace :v1 do
+      resources :carts, only: [:show]
+      resources :phones
+    end
   end
   # api
   namespace :api do

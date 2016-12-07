@@ -3,15 +3,11 @@ class CartsController < ApplicationController
   def add
     phone = Phone.find(params[:phone_id])
     @cart = Cart.find_by(id: session[:cart_id])
-
-    if @cart.nil?
-      @cart = Cart.create
-      session[:cart_id] = cart.id
-    end
+    @cart = current_cart
     @cart.add(phone)
 
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to carts_path }
       format.js { render :add }
     end
 

@@ -1,6 +1,5 @@
 class PhonesController < ApplicationController
   def index
-
     category = Category.find_by_id(params[:id])
     keyword = params[:q]
     @category = category
