@@ -1,5 +1,10 @@
 <div class="order-details-index">
-  <div class="order-detail-name">Order #<%= @cart.id %> Details</div>
+  <div class="order-details">
+    <div class="order-detail-name">Order #<%= @cart.id %> Details</div>
+    <div class="order-detail-cus-name">Custommer Name: <%= @cart.user.name %></div>
+    <div class="order-detail-date">Created Date : <%= @cart.updated_at.getlocal.strftime("%B %d %Y") %></div>
+    <div class="order-detail-time">Created At: <%= @cart.updated_at.getlocal.strftime("%H:%M:%S %Z") %></div>
+  </div>
   <% if @cart.cart_lines==0 %>
       <div>This cart has no item</div>
   <% else %>
@@ -9,7 +14,7 @@
           <tr>
             <th class="colume-name">#</th>
             <th class="colume-name">Name</th>
-            <th class="colume-name">Added Date</th>
+            <th class="colume-name">Added At</th>
             <th class="colume-name">Price</th>
             <th class="colume-name">Quantity</th>
             <th class="colume-name">Sub Total</th>
@@ -19,18 +24,18 @@
           <% @cart.cart_lines.each do |cart_line| %>
               <tr>
                 <td>#</td>
-                <td><%= cart_line.phone.name %></td>
+                <td class="phone_name"><%= link_to cart_line.phone.name, phone_path(cart_line.phone) %></td>
                 <td><%= cart_line.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
-                <td><%= cart_line.price %></td>
+                <td><%= number_to_currency(cart_line.price , delimiter: "", format: "%n %u")%></td>
                 <td><%= cart_line.quantity %></td>
-                <td><%= cart_line.price * cart_line.quantity %></td>
+                <td><%= number_to_currency(cart_line.price * cart_line.quantity,delimiter: "", format: "%n %u") %></td>
               </tr>
           <% end %>
           </tbody>
         </table>
       </div>
   <% end %>
-  <div class="order-details-total">Total :<%= @cart.total_price %></div>
+  <div class="order-details-total">Total :<%= number_to_currency(@cart.total_price , delimiter: "", format: "%n %u")%></div>
   <div class="order-details-back">
       <%= link_to manages_orders_path do %>
           <button type="button" class="btn btn-success">Manage Order</button>

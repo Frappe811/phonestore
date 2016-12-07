@@ -32,8 +32,8 @@
       <thead>
       <tr>
         <th class="colume-name">Order #</th>
-        <th class="colume-name">Name</th>
-        <th class="colume-name">Added Date</th>
+        <th class="colume-name">Custommer Name</th>
+        <th class="colume-name">Created At</th>
         <th class="colume-name">Total</th>
         <th class="colume-name">Status</th>
         <th colspan="1" class="colume-name">Action</th>
@@ -42,15 +42,15 @@
       <tbody>
       <% @carts.each do |cart| %>
           <tr>
-            <td><%= cart.id %></td>
-            <td class="colume-value">
+            <td class="colume-text-center"><%= cart.id %></td>
+            <td class="colume-text-center">
               <% if cart.user.nil? %>
                   #####
               <% else %>
                   <%= cart.user.name %></td>
               <% end %>
               <td class="colume-text-center"><%= cart.updated_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
-              <td class="colume-text-center"><%= cart.total_price %></td>
+              <td class="colume-text-center"><%= number_to_currency(cart.total_price, delimiter: "", format: "%n %u") %></td>
               <td class="colume-text-center">
                 <% if cart.status==true %>
                     Completed
