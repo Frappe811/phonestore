@@ -1,7 +1,12 @@
 <div class="order-details-index">
   <div class="order-details">
     <div class="order-detail-name">Order #<%= @cart.id %> Details</div>
-    <div class="order-detail-cus-name">Custommer Name: <%= @cart.user.name %></div>
+    <div class="order-detail-cus-name">Custommer Name:
+      <% if @cart.user==nil %>
+          #####
+      <% else %>
+          <%= @cart.user.name %></div>
+      <% end %>
     <div class="order-detail-date">Created Date : <%= @cart.updated_at.getlocal.strftime("%B %d %Y") %></div>
     <div class="order-detail-time">Created At: <%= @cart.updated_at.getlocal.strftime("%H:%M:%S %Z") %></div>
   </div>
@@ -24,7 +29,7 @@
           <% @cart.cart_lines.each do |cart_line| %>
               <tr>
                 <td>#</td>
-                <td class="phone_name"><%= link_to cart_line.phone.name, phone_path(cart_line.phone) %></td>
+                <td class="phone_name"><%= link_to cart_line.phone.name, manages_phone_path(cart_line.phone) %></td>
                 <td><%= cart_line.created_at.getlocal.strftime("%d/%m/%Y %H:%M:%S %Z") %></td>
                 <td><%= number_to_currency(cart_line.price , delimiter: "", format: "%n %u")%></td>
                 <td><%= cart_line.quantity %></td>
