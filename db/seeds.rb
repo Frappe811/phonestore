@@ -19,4 +19,11 @@ User.create email: 'admins2@phonestore.com', password: '123456', name: 'Admin'
   Phone.where(category_id: '4').update_all(photo_url: "https://vinhphatmobile.com/images/thumbnails/300/300/detailed/9/3_0ltq-p6_giyn-4e.jpg")
   Phone.where(category_id: '5').update_all(photo_url: "https://vinhphatmobile.com/images/thumbnails/300/300/detailed/6/z10_dmh.jpg")
   Phone.where(category_id: '6').update_all(photo_url: "https://vinhphatmobile.com/images/thumbnails/300/300/detailed/8/SP-0185_(1)_sn7m-2b.jpg")
+
+  Phone.where(category_id: '1').update_all(name: "iPhone 6s Plus")
+  Phone.where(category_id: '2').update_all(name: "Samsung Galaxy S7 Edge")
+  Phone.where(category_id: '3').update_all(name: "Sony Xperia Z3 AU SOL26")
+  Phone.where(category_id: '4').update_all(name: "Xiaomi Redmi 3sgit")
+  Phone.where(category_id: '5').update_all(name: "BlackBerry DTEK50")
+  Phone.where(category_id: '6').update_all(name: "LG G5")
 end
