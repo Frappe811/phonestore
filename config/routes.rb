@@ -30,4 +30,10 @@ Rails.application.routes.draw do
       resources :phones
     end
   end
+  # api
+  namespace :api do
+    namespace :v1 do
+      resources :phones, only: [:show]
+    end
+  end
 end
