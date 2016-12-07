@@ -46,7 +46,9 @@
               <%= link_to add_to_carts_path(phone.id), remote:true do %>
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               <% end %>
-              <span class="buy">BUY NOW</span>
+              <%= link_to add_to_carts_path(phone.id) do %>
+                 <span class="buy">BUY NOW</span>
+              <%end %>
             </div>
           </div>
         </div>
